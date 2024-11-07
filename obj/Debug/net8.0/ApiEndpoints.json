@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "PruebaProyectoInformatico.Controllers.MessageController",
+    "Method": "GetMessage",
+    "RelativePath": "api/Message",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
