@@ -1,1 +1,6 @@
+# Archivos y carpetas a ignorar
 .vs/
+bin/
+obj/
+*.user
+*.suo

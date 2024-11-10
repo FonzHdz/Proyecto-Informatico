@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfon\\source\\repos\\ProyectoInformatico\\ProyectoInformatico\\ProyectoInformatico.csproj": {}
+    "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfon\\source\\repos\\ProyectoInformatico\\ProyectoInformatico\\ProyectoInformatico.csproj": {
+    "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfon\\source\\repos\\ProyectoInformatico\\ProyectoInformatico\\ProyectoInformatico.csproj",
+        "projectUniqueName": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj",
         "projectName": "ProyectoInformatico",
-        "projectPath": "C:\\Users\\alfon\\source\\repos\\ProyectoInformatico\\ProyectoInformatico\\ProyectoInformatico.csproj",
+        "projectPath": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj",
         "packagesPath": "C:\\Users\\alfon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfon\\source\\repos\\ProyectoInformatico\\ProyectoInformatico\\obj\\",
+        "outputPath": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
