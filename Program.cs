@@ -1,16 +1,33 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MongoDB.Driver;
+using ProyectoInformatico.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuración de servicios
+// Agregar servicios al contenedor
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IMongoClient>(s =>
+{
+    // Obtener la cadena de conexión de MongoDB desde la configuración
+    var connectionString = builder.Configuration.GetConnectionString("MongoDB");
+
+    var settings = MongoClientSettings.FromConnectionString(connectionString);
+    settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+
+    return new MongoClient(settings);
+});
+builder.Services.AddScoped<DoctorService>();
 
 var app = builder.Build();
 
-// Configuración del pipeline de solicitud HTTP
-if (!app.Environment.IsDevelopment())
+// Configuración del pipeline HTTP
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
@@ -18,19 +35,27 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-// Configura index.html en /frontend como página de inicio
-app.UseDefaultFiles(new DefaultFilesOptions
-{
-    DefaultFileNames = new List<string> { "frontend/index.html" }
-});
-app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
-// Configuración de rutas de controladores (si los necesitas)
-app.MapControllers();
+// Configuración de rutas de nivel superior
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "contacto",
+    pattern: "contacto",
+    defaults: new { controller = "Home", action = "Contacto" });
+
+app.MapControllerRoute(
+    name: "acceso-doctor",
+    pattern: "acceso-doctor",
+    defaults: new { controller = "Doctor", action = "AccesoDoctor" });
+
+app.MapControllerRoute(
+    name: "registro-doctor",
+    pattern: "registro-doctor",
+    defaults: new { controller = "Doctor", action = "RegistroDoctor" });
 
 app.Run();

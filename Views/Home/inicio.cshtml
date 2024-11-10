@@ -1,0 +1,125 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecografía 4D - Sistema de Gestión de Información Médica</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Content("~/")">Inicio</a></li>
+                    <li><a href="@Url.Content("contacto")">Contacto</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Acceso <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="@Url.Content("~/acceso-doctor")"><i class="fas fa-user-md"></i> Acceso para Doctor</a>
+                            <a href="@Url.Content("~/acceso-paciente")"><i class="fas fa-user"></i> Acceso para Paciente</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>Bienvenido a nuestro Servicio de Ecografía 4D</h2>
+                <p class="hero-subtitle">Experimente la magia de ver a su bebé con una claridad sin precedentes</p>
+                <div class="hero-features">
+                    <h3>Nuestra tecnología de vanguardia le permite:</h3>
+                    <ul>
+                        <li><i class="fas fa-baby-carriage"></i> Observar los rasgos faciales de su bebé con asombroso detalle</li>
+                        <li><i class="fas fa-smile"></i> Capturar movimientos en tiempo real, como bostezos o sonrisas</li>
+                        <li><i class="fas fa-camera"></i> Obtener imágenes de alta calidad para compartir con sus seres queridos</li>
+                        <li><i class="fas fa-heart"></i> Disfrutar de una experiencia segura y no invasiva</li>
+                    </ul>
+                </div>
+                <p class="hero-closing">Ofrecemos un servicio personalizado y cálido, diseñado para hacer de este momento algo verdaderamente especial para usted y su familia.</p>
+            </div>
+        </section>
+
+        <section id="beneficios" class="features">
+            <h2>Beneficios de la Ecografía 4D</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visualización Detallada</h3>
+                    <p>Observe el rostro y cuerpo de su bebé con increíble detalle</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Detección Temprana</h3>
+                    <p>Identifique posibles anomalías en etapas tempranas</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Vínculo Emocional</h3>
+                    <p>Fortalezca la conexión con su bebé antes del nacimiento</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Experiencia Compartida</h3>
+                    <p>Comparta este momento especial con familiares y amigos</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="process">
+            <h2>Nuestro Proceso</h2>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Programación</h3>
+                    <p>Agende su cita entre las semanas 26 y 32 del embarazo</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Preparación</h3>
+                    <p>Hidrátese adecuadamente para mejorar la calidad de las imágenes</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Escaneo</h3>
+                    <p>Disfrute de una sesión de aproximadamente 30 minutos</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Visualización</h3>
+                    <p>Observe en tiempo real las imágenes 4D de su bebé</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Entrega</h3>
+                    <p>Reciba imágenes y videos en formato digital</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="@Url.Content("~/js/script.js")"></script>
+</body>
+</html>

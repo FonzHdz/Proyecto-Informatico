@@ -1,0 +1,70 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso para Doctores - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="access-page doctor-access">
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Content("~/")">Inicio</a></li>
+                    <li><a href="@Url.Content("~/contacto")">Contacto</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Acceso <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="@Url.Content("~/acceso-doctor")"><i class="fas fa-user-md"></i> Acceso para Doctores</a>
+                            <a href="@Url.Content("~/acceso-paciente")"><i class="fas fa-user"></i> Acceso para Pacientes</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="access-form">
+            <h2>Acceso para Doctores</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-user-md"></i> Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <div class="additional-links">
+                <a href="#">¿Olvidó su contraseña?</a>
+                <a href="@Url.Content("~/registro-doctor")">Registrarse como doctor</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="@Url.Content("~/js/script.js")"></script>
+</body>
+</html>
