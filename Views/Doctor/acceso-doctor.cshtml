@@ -1,5 +1,4 @@
-﻿@page
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,9 +10,9 @@
     <title>Acceso para Doctores - Ecografía 4D</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+    <link rel="stylesheet" href="@Url.Content("~/styles.css")">
 </head>
-<body class="access-page doctor-access">
+<body class="doctor-login-page">
     <header>
         <div class="header-content">
             <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
@@ -34,24 +33,34 @@
     </header>
 
     <main>
-        <section class="access-form">
-            <h2>Acceso para Doctores</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email"><i class="fas fa-user-md"></i> Email</label>
-                    <input type="email" id="email" name="email" required>
+        <div class="doctor-login-container">
+            <div class="doctor-login-content">
+                <div class="doctor-login-header">
+                    <i class="fas fa-user-md"></i>
+                    <h2>Acceso para Doctores</h2>
                 </div>
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="doctor-login-image">
+                    <img src="@Url.Content("~/public/image.jpg")" alt="Doctor realizando ecografía">
                 </div>
-                <button type="submit">Iniciar Sesión</button>
-            </form>
-            <div class="additional-links">
-                <a href="#">¿Olvidó su contraseña?</a>
-                <a href="@Url.Content("~/registro-doctor")">Registrarse como doctor</a>
+                <form id="doctorLoginForm" class="doctor-login-form">
+                    <div class="form-group">
+                        <label for="usuario"><i class="fas fa-id-card"></i> Cédula</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                    </button>
+                </form>
+                <div class="doctor-login-footer">
+                    <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
+                    <a href="@Url.Content("~/registro-doctor")" class="register-link">¿No tiene cuenta? Regístrese aquí</a>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
@@ -65,6 +74,6 @@
         </div>
     </footer>
 
-    <script src="@Url.Content("~/js/script.js")"></script>
+    <script src="@Url.Content("~/doctor-script.js")"></script>
 </body>
 </html>
