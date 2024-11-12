@@ -18,16 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alfon\Desktop\Proyecto-Informatico\ProyectoInformatico
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Doctor/acceso-doctor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXGFjY2Vzby1kb2N0b3IuY3NodG1s
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/acceso-doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXGFjY2Vzby1kb2N0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Doctor/panel-doctor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXHBhbmVsLWRvY3Rvci5jc2h0bWw=
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/panel-doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXHBhbmVsLWRvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Doctor/registro-doctor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXHJlZ2lzdHJvLWRvY3Rvci5jc2h0bWw=
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/registro-doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXHJlZ2lzdHJvLWRvY3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/acceso-denegado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhY2Nlc28tZGVuZWdhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/contacto.cshtml]
@@ -36,6 +40,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/inicio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmljaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Paciente/acceso-paciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcYWNjZXNvLXBhY2llbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Paciente/panel-paciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVccGFuZWwtcGFjaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Paciente/registro-paciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVccmVnaXN0cm8tcGFjaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/_ViewImports.cshtml]

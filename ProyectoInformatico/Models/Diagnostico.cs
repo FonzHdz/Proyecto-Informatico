@@ -9,10 +9,13 @@ namespace ProyectoInformatico.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        public string Informacion { get; set; }
+        public string Descripcion { get; set; }
+        public string Resultados { get; set; }
+        public string Observaciones { get; set; }
+        public string Conclusion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaModificacion { get; set; }
-        public string IdEspecialista { get; set; } // Referencia al Id del especialista
+        public int IdEspecialista { get; set; } // Referencia al Id del especialista
         public string IdPaciente { get; set; } // Referencia al Id del paciente
     }
 }

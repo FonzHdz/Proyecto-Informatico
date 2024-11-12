@@ -33,49 +33,69 @@
         </div>
     </header>
 
-    <main>
-        <section class="contact-section">
-            <div class="contact-info">
-                <h2>Contáctenos</h2>
-                <p>Estamos aquí para responder a sus preguntas y programar su ecografía 4D.</p>
-                <ul class="contact-details">
-                    <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Cali, Colombia</li>
-                    <li><i class="fas fa-phone"></i> +57 (2) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> info@ecografia4d.com</li>
-                    <li><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 AM - 6:00 PM</li>
-                </ul>
-            </div>
-            <div class="contact-form">
-                <h3>Envíenos un mensaje</h3>
-                <form id="contactForm" action="https://formspree.io/f/mjkvvqpg" method="POST">
+    <main class="contact-main">
+        <div class="contact-container">
+            <h1>Contáctenos</h1>
+            <p class="contact-intro">Estamos aquí para responder a sus preguntas y programar su ecografía 4D. No dude en ponerse en contacto con nosotros.</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Calle Principal 123, Cali, Colombia</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+57 (2) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@ecografia4d.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mjkvvqpg" method="POST">
                     <div class="form-group">
-                        <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="nombre" required placeholder=" ">
+                        <label for="nombre">Nombre</label>
                     </div>
                     <div class="form-group">
-                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Email</label>
                     </div>
                     <div class="form-group">
-                        <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono">
+                        <input type="tel" id="telefono" name="telefono" placeholder=" ">
+                        <label for="telefono">Teléfono</label>
                     </div>
                     <div class="form-group">
-                        <label for="mensaje"><i class="fas fa-comment"></i> Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" required></textarea>
+                        <textarea id="mensaje" name="mensaje" required placeholder=" "></textarea>
+                        <label for="mensaje">Mensaje</label>
                     </div>
-                    <button type="submit">Enviar Mensaje</button>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
                 </form>
             </div>
-            <div id="successMessage" class="success-message">
-                <div class="success-content">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>¡Mensaje enviado con éxito!</h3>
-                    <p>Gracias por contactarnos. Pronto recibirá una respuesta.</p>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
+
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Mensaje enviado con éxito!</h3>
+            <p>Gracias por contactarnos. Pronto recibirá una respuesta.</p>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error-message">
+        <div class="error-content">
+            <i class="fas fa-times-circle"></i>
+            <h3>¡Error!</h3>
+            <p id="errorText">Ha ocurrido un error inesperado.</p>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -88,6 +108,6 @@
         </div>
     </footer>
 
-    <script src="@Url.Content("~/js/script.js")"></script>
+    <script src="@Url.Content("~/js/contacto.js")"></script>
 </body>
 </html>

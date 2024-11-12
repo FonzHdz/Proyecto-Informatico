@@ -1,0 +1,155 @@
+﻿@page
+@using ProyectoInformatico.DTOs
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Paciente - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="patient-panel-page">
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Content("~/logout")" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="dashboard-section">
+            <h2>Bienvenido(a), <span id="nombrePaciente">@ViewBag.PacienteNombre</span></h2>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Próxima Cita</h3>
+                    <p id="proximaCita">@ViewBag.ProximaCita</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-image"></i>
+                    <h3>Última Ecografía</h3>
+                    <p id="ultimaEcografia">@ViewBag.UltimaEcografia</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Semanas de Embarazo</h3>
+                    <p id="semanasEmbarazo">@ViewBag.SemanasEmbarazo semanas</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="citas" class="dashboard-section">
+            <h2>Mis Citas</h2>
+            <div class="appointment-list">
+                @{
+                    var citas = ViewBag.Citas as List<ProyectoInformatico.DTOs.InformacionCita>;
+                }
+                @if (ViewBag.Citas != null && ((List<InformacionCita>)ViewBag.Citas).Any())
+                {
+                    foreach (var cita in (List<InformacionCita>)ViewBag.Citas)
+                    {
+                        <div class="appointment-card">
+                            <h3>Fecha: @cita.FechaCita.ToString("dd/MM/yyyy")</h3>
+                            <p><strong>Hora:</strong> @cita.FechaCita.ToString("hh:mm tt")</p>
+                            <p><strong>Especialista:</strong> @cita.Especialista</p>
+                            <p><strong>Estado:</strong> @cita.Estado</p>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No tienes citas programadas.</p>
+                }
+            </div>
+            <button class="btn-primary" id="nuevaCitaBtn">Solicitar Nueva Cita</button>
+        </section>
+
+        <section id="historial-medico" class="dashboard-section">
+            <h2>Historial Médico</h2>
+            <div class="historial-list">
+                @if (ViewBag.HistorialMedico != null && ((List<Diagnostico>)ViewBag.HistorialMedico).Any())
+                {
+                    foreach (var diagnostico in (List<Diagnostico>)ViewBag.HistorialMedico)
+                    {
+                        <div class="diagnostico-card">
+                            <h3>@diagnostico.FechaCreacion.ToString("dd/MM/yyyy")</h3>
+                            <p><strong>Diagnóstico:</strong> Ecografía de control</p>
+                            <p><strong>Servicio:</strong> Ecografía 4D</p>
+                            <p><strong>Descripción:</strong> Ecografía del feto en desarrollo</p>
+                            <button class="btn-primary solicitarDiagnosticoBtn" onclick="solicitarDiagnostico('@diagnostico.Id')">Solicitar Diagnóstico</button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No tienes diagnósticos registrados.</p>
+                }
+            </div>
+        </section>
+
+        <section id="perfil" class="dashboard-section">
+            <h2>Mi Perfil</h2>
+            <form id="perfilForm" class="profile-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="@ViewBag.PacienteNombre">
+                    <input type="hidden" id="cedula" name="cedula" value="@ViewBag.Cedula">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="correo" value="@ViewBag.Correo">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" value="@ViewBag.Telefono">
+                </div>
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="@ViewBag.FechaNacimiento">
+                </div>
+            </form>
+            <button class="btn-primary" id="actualizarPerfilBtn">Actualizar Perfil</button>
+        </section>
+    </main>
+
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Acción exitosa!</h3>
+            <p id="successText">Se ha ejecutado la acción correctamente.</p>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error-message">
+        <div class="error-content">
+            <i class="fas fa-times-circle"></i>
+            <h3>¡Error!</h3>
+            <p id="errorText">Ocurrió un error inesperado.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="@Url.Content("~/js/paciente-actualizar.js")"></script>
+    <script src="@Url.Content("~/js/solicitar-diagnostico.js")"></script>
+</body>
+</html>

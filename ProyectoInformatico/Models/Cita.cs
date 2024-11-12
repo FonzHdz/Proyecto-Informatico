@@ -13,6 +13,6 @@ namespace ProyectoInformatico.Models
         public DateTime FechaCita { get; set; }
         public string Estado { get; set; } // "pendiente", "realizada", "cancelada"
         public string IdPaciente { get; set; } // Referencia al Id del paciente
-        public string IdEspecialista { get; set; } // Referencia al Id del especialista
+        public int IdEspecialista { get; set; } // Referencia al Id del especialista
     }
 }

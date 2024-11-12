@@ -1,0 +1,219 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Paciente - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="patient-registration-page">
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Content("~/")">Inicio</a></li>
+                    <li><a href="@Url.Content("~/contacto")">Contacto</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Acceso <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="@Url.Content("~/acceso-doctor")"><i class="fas fa-user-md"></i> Acceso para Doctores</a>
+                            <a href="@Url.Content("~/acceso-paciente")"><i class="fas fa-user"></i> Acceso para Pacientes</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="registration-container">
+            <div class="registration-content">
+                <div class="registration-header">
+                    <i class="fas fa-user"></i>
+                    <h1>Registro de Paciente</h1>
+                    <p>Únase a nuestro sistema de ecografía 4D</p>
+                </div>
+                <form id="registroPacienteForm" class="registration-form">
+                    <div class="form-section">
+                        <h2>Información Personal</h2>
+                        <div class="form-group">
+                            <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaNacimiento"><i class="fas fa-calendar-alt"></i> Fecha de nacimiento</label>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="genero"><i class="fas fa-venus-mars"></i> Género</label>
+                            <select id="genero" name="genero" required>
+                                <option value="">Seleccione</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Información de Contacto</h2>
+                        <div class="form-group">
+                            <label for="correo"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="text" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion"><i class="fas fa-home"></i> Dirección</label>
+                            <input type="text" id="direccion" name="direccion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad"><i class="fas fa-city"></i> Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="departamento"><i class="fas fa-map-marker-alt"></i> Departamento</label>
+                            <input type="text" id="departamento" name="departamento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Información Médica</h2>
+                        <div class="form-group">
+                            <label for="tipoSangre"><i class="fas fa-tint"></i> Tipo de sangre</label>
+                            <select id="tipoSangre" name="tipoSangre" required>
+                                <option value="">Seleccione</option>
+                                <option value="A+">A+</option>
+                                <option value="O+">O+</option>
+                                <option value="B+">B+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="O-">O-</option>
+                                <option value="B-">B-</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="semanasEmbarazo"><i class="fas fa-baby-carriage"></i> Semanas de embarazo</label>
+                            <input type="number" id="semanasEmbarazo" name="semanasEmbarazo" min="0" max="42" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaUltimaEcografia"><i class="fas fa-camera"></i> Fecha de la última ecografía</label>
+                            <input type="date" id="fechaUltimaEcografia" name="fechaUltimaEcografia">
+                        </div>
+                        <div class="form-group">
+                            <label for="alergias"><i class="fas fa-allergies"></i> Alergias</label>
+                            <textarea id="alergias" name="alergias" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Credenciales de Acceso</h2>
+                        <div class="form-group">
+                            <label for="cedula"><i class="fas fa-id-card"></i> Documento de identidad</label>
+                            <input type="text" id="cedula" name="cedula" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password"><i class="fas fa-lock"></i> Confirmar contraseña</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Información Adicional</h2>
+                        <div class="form-group">
+                            <label for="esExtranjero"><i class="fas fa-globe"></i> ¿Es extranjero?</label>
+                            <input type="checkbox" id="esExtranjero" name="esExtranjero">
+                        </div>
+                        <div class="form-group">
+                            <label for="nacionalidad"><i class="fas fa-flag"></i> Nacionalidad</label>
+                            <select id="nacionalidad" name="nacionalidad" required disabled>
+                                <option value="">Seleccione su país</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="México">México</option>
+                                <option value="Perú">Perú</option>
+                                <option value="España">España</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Alemania">Alemania</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Reino Unido">Reino Unido</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Japón">Japón</option>
+                                <option value="China">China</option>
+                                <option value="India">India</option>
+                                <option value="Sudáfrica">Sudáfrica</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="estadoCivil"><i class="fas fa-heart"></i> Estado Civil</label>
+                            <select id="estadoCivil" name="estadoCivil" required>
+                                <option value="">Seleccione</option>
+                                <option value="soltero">Soltera</option>
+                                <option value="casado">Casada</option>
+                                <option value="viudo">Viuda</option>
+                                <option value="divorciado">Divorciada</option>
+                                <option value="separado">Separada</option>
+                                <option value="union libre">Unión Libre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-user-plus"></i> Registrarse
+                    </button>
+                </form>
+                <div class="registration-footer">
+                    <p>¿Ya tiene una cuenta? <a href="@Url.Content("~/acceso-paciente")">Inicie sesión aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Registro exitoso!</h3>
+            <p>Su cuenta ha sido creada con éxito. Ahora puede iniciar sesión.</p>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error-message">
+        <div class="error-content">
+            <i class="fas fa-times-circle"></i>
+            <h3>¡Error!</h3>
+            <p id="errorText">Ocurrió un error inesperado.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="@Url.Content("~/js/paciente-registro.js")"></script>
+</body>
+</html>

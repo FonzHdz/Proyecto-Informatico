@@ -1,0 +1,158 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Doctor - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="doctor-registration-page">
+    <div class="page-wrapper">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
+                <nav>
+                    <ul>
+                        <li><a href="@Url.Content("~/")">Inicio</a></li>
+                        <li><a href="@Url.Content("~/contacto")">Contacto</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Acceso <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="@Url.Content("~/acceso-doctor")"><i class="fas fa-user-md"></i> Acceso para Doctores</a>
+                                <a href="@Url.Content("~/acceso-paciente")"><i class="fas fa-user"></i> Acceso para Pacientes</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="doctor-registration-container">
+                <div class="registration-content">
+                    <div class="registration-header">
+                        <i class="fas fa-user-md"></i>
+                        <h1>Registro de Doctor</h1>
+                        <p>Complete el formulario para crear su cuenta</p>
+                    </div>
+                    <form id="registroForm" class="registration-form">
+                        <div class="form-section">
+                            <h2>Información Personal</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre"><i class="fas fa-user"></i> Nombres</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido"><i class="fas fa-user"></i> Apellidos</label>
+                                    <input type="text" id="apellido" name="apellido" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cedula"><i class="fas fa-id-card"></i> Cédula</label>
+                                <input type="text" id="cedula" name="cedula" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="genero"><i class="fas fa-venus-mars"></i> Género</label>
+                                <select id="genero" name="genero" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_nacimiento"><i class="fas fa-calendar-alt"></i> Fecha de Nacimiento</label>
+                                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h2>Información de Contacto</h2>
+                            <div class="form-group">
+                                <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion"><i class="fas fa-home"></i> Dirección</label>
+                                <input type="text" id="direccion" name="direccion" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento"><i class="fas fa-map-marker-alt"></i> Departamento</label>
+                                <input type="text" id="departamento" name="departamento" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ciudad"><i class="fas fa-city"></i> Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad" required>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h2>Información Profesional</h2>
+                            <div class="form-group">
+                                <label for="especialidad"><i class="fas fa-user-md"></i> Especialidad</label>
+                                <select id="especialidad" name="especialidad" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="radiología">Radiología</option>
+                                    <option value="ginecología">Ginecología</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h2>Información de Cuenta</h2>
+                            <div class="form-group">
+                                <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password"><i class="fas fa-lock"></i> Confirmar Contraseña</label>
+                                <input type="password" id="confirm-password" name="confirm-password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-user-plus"></i> Registrarse
+                        </button>
+                    </form>
+                    <div class="registration-footer">
+                        <p>¿Ya tiene una cuenta? <a href="@Url.Content("~/acceso-doctor")">Inicie sesión aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="successMessage" class="success-message">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>¡Registro exitoso!</h3>
+                <p>Su cuenta ha sido creada con éxito. Ahora puede iniciar sesión.</p>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message">
+            <div class="error-content">
+                <i class="fas fa-times-circle"></i>
+                <h3>¡Error!</h3>
+                <p id="errorText">Ocurrió un error inesperado.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="@Url.Content("~/js/doctor-registro.js")"></script>
+</body>
+</html>

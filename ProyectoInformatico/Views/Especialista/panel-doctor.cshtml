@@ -1,0 +1,105 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control del Doctor - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="doctor-panel">
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-baby"></i> Ecografía 4D</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Content("~/logout")" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="dashboard" class="dashboard">
+            <h2>Bienvenido, Dr. @ViewBag.Nombre</h2>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Pacientes Totales</h3>
+                    <p>@ViewBag.PacientesTotales</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Citas Hoy</h3>
+                    <p>@ViewBag.CitasHoy</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-images"></i>
+                    <h3>Ecografías Realizadas</h3>
+                    <p>@ViewBag.EcografiasRealizadas</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="pacientes" class="pacientes">
+            <h2>Gestión de Pacientes</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar paciente...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <table class="pacientes-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha de Última Ecografía</th>
+                        <th>Semanas de Gestación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>María González</td>
+                        <td>15/05/2023</td>
+                        <td>28</td>
+                        <td>
+                            <button class="btn-action"><i class="fas fa-eye"></i> Ver</button>
+                            <button class="btn-action"><i class="fas fa-edit"></i> Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="agenda" class="agenda">
+            <h2>Agenda de Citas</h2>
+            <div class="calendar">
+                <p>Componente de calendario para gestionar citas</p>
+            </div>
+            <div class="appointment-list">
+                <div class="appointment-card" id="cita-1">
+                    <h3>Paciente: María González</h3>
+                    <p>Fecha: 15 de Mayo, 2024</p>
+                    <p>Hora: 10:00 AM</p>
+                    <button class="btn-primary" onclick="accederCita(1)">Acceder a Cita</button>
+                    <button class="btn-secondary marcar-no-realizada" onclick="marcarNoRealizada(1)">Marcar como No Realizada</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="@Url.Content("~/js/panel-doctor.js")"></script>
+</body>
+</html>
