@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wYw+taiFutF6njiZs8Qn850610vxKZ+P2BHnUE9c3jk=",
+  "Hash": "Gh/Ew3hH+HXTap4DxDYW//PNhYPwFPx5LHOOUGC77F0=",
   "Source": "ProyectoInformatico",
   "BasePath": "_content/ProyectoInformatico",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\js\\contacto.js"
     },
     {
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\diagnostico-guardar.js",
+      "SourceId": "ProyectoInformatico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "BasePath": "_content/ProyectoInformatico",
+      "RelativePath": "js/diagnostico-guardar.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\diagnostico-guardar.js"
+    },
+    {
       "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\doctor-registro.js"
+    },
+    {
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",
+      "SourceId": "ProyectoInformatico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "BasePath": "_content/ProyectoInformatico",
+      "RelativePath": "js/marcar-cita.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\marcar-cita.js"
     },
     {
       "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-acceso.js",

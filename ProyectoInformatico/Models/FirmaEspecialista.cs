@@ -9,7 +9,9 @@ namespace ProyectoInformatico.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        public string IdEspecialista { get; set; } // Referencia al Id del especialista
-        public string UrlFirma { get; set; } // URL para acceder a la imagen de la firma
+        public string Formato { get; set; }
+        public string Tamaño { get; set; }
+        public string UrlDescarga { get; set; }
+        public string IdEspecialista { get; set; }
     }
 }

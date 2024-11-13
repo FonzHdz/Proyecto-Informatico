@@ -2,7 +2,6 @@
 using ProyectoInformatico.Models;
 using ProyectoInformatico.DTOs;
 using ProyectoInformatico.Services;
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
@@ -14,6 +13,12 @@ using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using MailKit.Net.Smtp;
 using MimeKit;
+using System;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Text.Json;
+using System.Drawing;
 
 namespace ProyectoInformatico.Controllers
 {
@@ -23,17 +28,23 @@ namespace ProyectoInformatico.Controllers
         private readonly EspecialistaService _especialistaService;
         private readonly CitaService _citaService;
         private readonly DiagnosticoService _diagnosticoService;
+        private readonly VideoEcografiaService _videoEcografiaService;
+        private readonly ImagenRadiologicaService _imagenRadiologicaService;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly EmailSettings _emailSettings;
+        private readonly string _apiKey;
 
-        public PacienteController(CitaService citaService, DiagnosticoService diagnosticoService, EspecialistaService especialistaService, PacienteService pacienteService, IWebHostEnvironment webHostEnvironment, EmailSettings emailSettings)
+        public PacienteController(CitaService citaService, DiagnosticoService diagnosticoService, EspecialistaService especialistaService, PacienteService pacienteService, VideoEcografiaService videoEcografiaService, ImagenRadiologicaService imagenRadiologicaService, IWebHostEnvironment webHostEnvironment, EmailSettings emailSettings, IConfiguration configuration)
         {
             _citaService = citaService;
             _diagnosticoService = diagnosticoService;
             _especialistaService = especialistaService;
             _pacienteService = pacienteService;
+            _videoEcografiaService = videoEcografiaService;
+            _imagenRadiologicaService = imagenRadiologicaService;
             _webHostEnvironment = webHostEnvironment;
             _emailSettings = emailSettings;
+            _apiKey = configuration["ZamzarApiKey"];
         }
 
         [HttpGet("registro-paciente")]
@@ -198,8 +209,11 @@ namespace ProyectoInformatico.Controllers
         public async Task<IActionResult> EnviarDiagnostico([FromBody] PdfDataRequest request)
         {
             string pdfTemplatePath = Path.Combine(_webHostEnvironment.WebRootPath, "public", "DiagnosticoPlantilla.pdf");
+            string rutaTemporalDirectorio = Path.Combine(Directory.GetCurrentDirectory(), "ArchivosTemporales");
+            Directory.CreateDirectory(rutaTemporalDirectorio);
 
             using var outputStream = new MemoryStream();
+            Console.WriteLine($"Recibido DiagnosticoId: {request.DiagnosticoId}");
 
             try
             {
@@ -216,9 +230,9 @@ namespace ProyectoInformatico.Controllers
                 }
 
                 var especialista = await _especialistaService.GetEspecialistaByIdentificacion(diagnostico.IdEspecialista);
-                if (paciente == null)
+                if (especialista == null)
                 {
-                    return BadRequest(new { mensaje = "Paciente no encontrado." });
+                    return BadRequest(new { mensaje = "Especialista no encontrado." });
                 }
 
                 using (var pdfReader = new PdfReader(pdfTemplatePath))
@@ -237,22 +251,50 @@ namespace ProyectoInformatico.Controllers
                     formFields.SetField("var-cedula_paciente", paciente.Cedula);
                     formFields.SetField("var-date_n_paciente", paciente.FechaNacimiento.ToString("dd - MM - yyyy"));
                     formFields.SetField("var-edad_paciente", ((DateTime.Now - paciente.FechaNacimiento).TotalDays / 365).ToString("0") + " años");
-                    formFields.SetField("var-tel_paciente", "+57 ", paciente.Telefono);
+                    formFields.SetField("var-tel_paciente", $"+57 {paciente.Telefono}");
                     formFields.SetField("var-date_cita", diagnostico.FechaCreacion.ToString("dd - MM - yyyy"));
-                    formFields.SetField("var-hora_cita", diagnostico.FechaCreacion.ToString("hh:mm tt"));
-                    formFields.SetField("var-servicio", "Evaluación morfológica fetal");
-                    formFields.SetField("var-meses_embarazo", paciente.SemanasEmbarazo.ToString() + " semanas");
                     formFields.SetField("var-descripcion", diagnostico.Descripcion ?? "N/A");
-                    formFields.SetField("var-resultados", diagnostico.Resultados ?? "N/A");
-                    formFields.SetField("var-observaciones", diagnostico.Observaciones ?? "N/A");
                     formFields.SetField("var-conclusiones", diagnostico.Conclusion ?? "N/A");
                     formFields.SetField("var-nombre_especialista", "Dr. " + especialista.Nombre);
-                    formFields.SetField("var-especialidad", "Especialidad " + especialista.Especialidad);
-
                     stamper.FormFlattening = true;
                 }
 
                 byte[] pdfBytes = outputStream.ToArray();
+
+                var videoEcografia = await _videoEcografiaService.GetByDiagnosticoId(diagnostico.Id);
+                string rutaTemporalMp4 = null;
+
+                if (videoEcografia != null && !string.IsNullOrEmpty(videoEcografia.UrlDescarga))
+                {
+                    var rutaTemporalAvi = Path.Combine(rutaTemporalDirectorio, $"Ecografia_{diagnostico.Id}.avi");
+                    using (var clientHttp = new HttpClient())
+                    {
+                        var response = await clientHttp.GetAsync(videoEcografia.UrlDescarga);
+                        response.EnsureSuccessStatusCode();
+                        await using var fileStream = new FileStream(rutaTemporalAvi, FileMode.Create, FileAccess.Write);
+                        await response.Content.CopyToAsync(fileStream);
+                    }
+
+                    rutaTemporalMp4 = await ConvertVideoToMp4(rutaTemporalAvi, diagnostico.Id);
+                }
+
+                var imagenesRadiologicas = await _imagenRadiologicaService.ObtenerImagenesPorDiagnostico(diagnostico.Id);
+                List<string> imagenesPng = new List<string>();
+
+                foreach (var imagen in imagenesRadiologicas)
+                {
+                    string rutaTemporalPng = Path.Combine(rutaTemporalDirectorio, $"Radiologica_{imagen.Id}.png");
+
+                    using (var clientHttp = new HttpClient())
+                    {
+                        var response = await clientHttp.GetAsync(imagen.UrlDescarga);
+                        response.EnsureSuccessStatusCode();
+                        await using var fileStream = new FileStream(rutaTemporalPng, FileMode.Create, FileAccess.Write);
+                        await response.Content.CopyToAsync(fileStream);
+                    }
+
+                    imagenesPng.Add(rutaTemporalPng);
+                }
 
                 var message = new MimeMessage();
                 message.From.Add(new MailboxAddress("Sistema de Diagnósticos", _emailSettings.SenderEmail));
@@ -261,10 +303,23 @@ namespace ProyectoInformatico.Controllers
 
                 var builder = new BodyBuilder
                 {
-                    TextBody = "Estimado(a) " + paciente.Nombre + ",\n\nEstamos enviando su diagnóstico de acuerdo a su solicitud. Se adjuntan el diagnóstico del día " + diagnostico.FechaCreacion.ToString("dd/MM/yyyy") + " junto al video MP4 de la ecografía realizada y las imágenes radiológicas correspondientes.",
+                    TextBody = $"Estimado(a) {paciente.Nombre},\n\nAdjuntamos su diagnóstico del día {diagnostico.FechaCreacion:dd/MM/yyyy} junto con los recursos multimedia asociados."
                 };
 
                 builder.Attachments.Add($"Diagnostico_{paciente.Nombre}.pdf", pdfBytes, new ContentType("application", "pdf"));
+
+                if (!string.IsNullOrEmpty(rutaTemporalMp4) && System.IO.File.Exists(rutaTemporalMp4))
+                {
+                    builder.Attachments.Add($"Ecografia_{diagnostico.Id}.mp4", System.IO.File.ReadAllBytes(rutaTemporalMp4), new ContentType("video", "mp4"));
+                }
+
+                foreach (var rutaPng in imagenesPng)
+                {
+                    if (System.IO.File.Exists(rutaPng))
+                    {
+                        builder.Attachments.Add(Path.GetFileName(rutaPng), System.IO.File.ReadAllBytes(rutaPng), new ContentType("image", "png"));
+                    }
+                }
 
                 message.Body = builder.ToMessageBody();
 
@@ -274,12 +329,73 @@ namespace ProyectoInformatico.Controllers
                 await client.SendAsync(message);
                 client.Disconnect(true);
 
-                return Ok(new { mensaje = "El diagnóstico se ha enviado exitosamente al correo del paciente." });
+                foreach (var rutaPng in imagenesPng)
+                {
+                    if (System.IO.File.Exists(rutaPng))
+                    {
+                        System.IO.File.Delete(rutaPng);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(rutaTemporalMp4) && System.IO.File.Exists(rutaTemporalMp4))
+                {
+                    System.IO.File.Delete(rutaTemporalMp4);
+                }
+
+                return Ok(new { mensaje = "El diagnóstico y recursos multimedia se han enviado exitosamente." });
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al generar el PDF: {ex.Message}");
-                return StatusCode(500, new { mensaje = "Error al generar el PDF. Por favor, intente nuevamente." });
+                Console.WriteLine($"Error al enviar el diagnóstico: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Error al enviar el diagnóstico. Por favor, intente nuevamente." });
+            }
+        }
+
+        private async Task<string> ConvertVideoToMp4(string rutaTemporalAvi, string diagnosticoId)
+        {
+            var httpClient = new HttpClient();
+
+            var byteArray = System.Text.Encoding.ASCII.GetBytes($"{_apiKey}:");
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+            var content = new MultipartFormDataContent();
+            content.Add(new ByteArrayContent(System.IO.File.ReadAllBytes(rutaTemporalAvi)), "source_file", $"Ecografia_{diagnosticoId}.avi");
+            content.Add(new StringContent("mp4"), "target_format");
+
+            var response = await httpClient.PostAsync("https://api.zamzar.com/v1/jobs", content);
+            response.EnsureSuccessStatusCode();
+
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            var jsonDocument = JsonDocument.Parse(jsonResponse);
+            var jobId = jsonDocument.RootElement.GetProperty("id").GetInt32();
+
+            while (true)
+            {
+                var jobResponse = await httpClient.GetAsync($"https://api.zamzar.com/v1/jobs/{jobId}");
+                jobResponse.EnsureSuccessStatusCode();
+
+                var jobJson = await jobResponse.Content.ReadAsStringAsync();
+                var jobStatus = JsonDocument.Parse(jobJson).RootElement.GetProperty("status").GetString();
+
+                if (jobStatus == "successful")
+                {
+                    var targetFileId = JsonDocument.Parse(jobJson).RootElement.GetProperty("target_files")[0].GetProperty("id").GetInt32();
+                    var downloadUrl = $"https://api.zamzar.com/v1/files/{targetFileId}/content";
+
+                    var convertedResponse = await httpClient.GetAsync(downloadUrl);
+                    var rutaMp4 = Path.Combine(Path.GetDirectoryName(rutaTemporalAvi), $"Ecografia_{diagnosticoId}.mp4");
+
+                    await using var fs = new FileStream(rutaMp4, FileMode.Create, FileAccess.Write);
+                    await convertedResponse.Content.CopyToAsync(fs);
+
+                    return rutaMp4;
+                }
+                else if (jobStatus == "failed")
+                {
+                    throw new Exception("La conversión falló en Zamzar.");
+                }
+
+                await Task.Delay(5000);
             }
         }
     }

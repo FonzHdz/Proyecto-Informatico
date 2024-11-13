@@ -6,6 +6,7 @@ using ProyectoInformatico.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
 using ProyectoInformatico.DTOs;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,12 @@ builder.Services.AddSingleton<IMongoClient>(s =>
     return new MongoClient(settings);
 });
 
+builder.Services.AddSingleton(sp =>
+    new BlobStorageService(
+        builder.Configuration["AzureStorage:ConnectionString"]
+    ));
+
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -30,6 +37,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
     options.AddPolicy("DoctorPolicy", policy => policy.RequireRole("Doctor"));
     options.AddPolicy("PacientePolicy", policy => policy.RequireRole("Paciente"));
 });
@@ -37,13 +45,23 @@ builder.Services.AddAuthorization(options =>
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings")
 );
+
 builder.Services.AddSingleton(resolver =>
     resolver.GetRequiredService<IOptions<EmailSettings>>().Value
 );
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
+
 builder.Services.AddScoped<EspecialistaService>();
 builder.Services.AddScoped<PacienteService>();
 builder.Services.AddScoped<CitaService>();
 builder.Services.AddScoped<DiagnosticoService>();
+builder.Services.AddScoped<VideoEcografiaService>();
+builder.Services.AddSingleton<ImagenRadiologicaService>();
+builder.Services.AddScoped<AdminService>();
 
 var app = builder.Build();
 
@@ -62,6 +80,19 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+var rutaArchivosTemporales = Path.Combine(Directory.GetCurrentDirectory(), "ArchivosTemporales");
+
+if (!Directory.Exists(rutaArchivosTemporales))
+{
+    Directory.CreateDirectory(rutaArchivosTemporales);
+}
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(rutaArchivosTemporales),
+    RequestPath = "/ArchivosTemporales"
+});
 
 app.MapControllerRoute(
     name: "default",
@@ -91,5 +122,10 @@ app.MapControllerRoute(
     name: "registro-paciente",
     pattern: "registro-paciente",
     defaults: new { controller = "Paciente", action = "RegistroPaciente" });
+
+app.MapControllerRoute(
+    name: "login-admin",
+    pattern: "login-admin",
+    defaults: new { controller = "Admin", action = "AccesoAdmin" });
 
 app.Run();

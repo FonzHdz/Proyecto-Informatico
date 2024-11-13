@@ -1,11 +1,11 @@
 ﻿:root {
-    --primary-color: #3498db; /* Azul suave */
-    --secondary-color: #2c3e50; /* Azul oscuro */
-    --accent-color: #3498db; /* Coral */
-    --background-color: #f0f4f8; /* Gris muy claro */
-    --text-color: #34495e; /* Gris oscuro */
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #3498db;
+    --background-color: #f0f4f8;
+    --text-color: #34495e;
     --white: #ffffff;
-    --light-blue: #ebf5fb; /* Azul muy claro */
+    --light-blue: #ebf5fb;
 }
 
 body {
@@ -15,6 +15,7 @@ body {
     padding: 0;
     color: var(--text-color);
     background-color: var(--background-color);
+    height: 100%;
 }
 
 header {
@@ -25,7 +26,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -75,7 +76,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px; /* Añade padding arriba y abajo */
+    padding: 80px 20px;
 }
 
 .hero-content {
@@ -88,7 +89,7 @@ main {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(52, 152, 219, 0.2);
     color: var(--text-color);
-    text-align: center; /* Centra todo el contenido por defecto */
+    text-align: center;
 }
 
 .hero h2 {
@@ -97,7 +98,7 @@ main {
     color: var(--primary-color);
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    text-align: center; /* Asegura que el título esté centrado */
+    text-align: center;
 }
 
 .hero-subtitle {
@@ -106,11 +107,11 @@ main {
     font-style: italic;
     color: var(--secondary-color);
     font-weight: 300;
-    text-align: center; /* Centra el subtítulo */
+    text-align: center;
 }
 
 .hero-features {
-    text-align: left; /* Mantiene el texto de las características alineado a la izquierda */
+    text-align: left;
     margin-bottom: 2rem;
     background-color: var(--light-blue);
     padding: 1.5rem;
@@ -151,12 +152,12 @@ main {
     border-top: 2px solid rgba(52, 152, 219, 0.2);
     color: var(--secondary-color);
     line-height: 1.6;
-    text-align: center; /* Centra el texto de cierre */
+    text-align: center;
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding: 100px 20px; /* Aumenta el padding en dispositivos móviles */
+        padding: 100px 20px;
     }
 
     .hero-content {
@@ -268,9 +269,11 @@ main {
 }
 
 footer {
-    background-color: var(--secondary-color);
-    color: white;
+    margin-top: auto;
+    background-color: #2c3e50;
+    color: #f0f4f8;
     padding: 1rem 0;
+    text-align: center;
 }
 
 .footer-content {
@@ -435,12 +438,12 @@ footer {
             text-decoration: underline;
         }
 
-/* Estilos específicos para acceso de pacientes */
+/* Estilos para acceso de pacientes */
 .patient-access .access-form {
     border-top: 4px solid var(--accent-color);
 }
 
-/* Estilos específicos para acceso de doctores */
+/* Estilos para acceso de doctores */
 .doctor-access .access-form {
     border-top: 4px solid var(--primary-color);
 }
@@ -494,7 +497,7 @@ footer {
 
 .contact-info {
     flex: 1;
-    padding: 0 1rem; /* Añadimos padding a la información de contacto */
+    padding: 0 1rem;
 }
 
 .info-item {
@@ -518,7 +521,7 @@ footer {
 
 .contact-form {
     flex: 2;
-    padding: 0 1rem; /* Añadimos padding al formulario */
+    padding: 0 1rem;
 }
 
     .contact-form .form-group {
@@ -639,10 +642,10 @@ footer {
     z-index: 1000;
 }
 
-.success-message.show {
-    opacity: 1;
-    visibility: visible;
-}
+    .success-message.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
 .success-content {
     background-color: white;
@@ -674,7 +677,7 @@ footer {
     color: var(--text-color);
 }
 
-/* Estilos para el mensaje de error */
+/* Estilos para el mensaje de éxito */
 .error-message {
     position: fixed;
     top: 0;
@@ -691,10 +694,10 @@ footer {
     z-index: 1000;
 }
 
-.error-message.show {
-    opacity: 1;
-    visibility: visible;
-}
+    .error-message.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
 .error-content {
     background-color: white;
@@ -713,7 +716,7 @@ footer {
 
 .error-content i {
     font-size: 4rem;
-    color: #cc2e2e;
+    color: #e74c3c;
     margin-bottom: 1rem;
 }
 
@@ -1099,7 +1102,7 @@ footer {
     }
 }
 
-/* Estilos mejorados para páginas de registro, acceso y contacto */
+/* Estilos para páginas de registro, acceso y contacto */
 .registration-page, .login-page, .contact-page {
     background-color: var(--background-color);
     min-height: 100vh;
@@ -1191,7 +1194,7 @@ footer {
             color: #2980b9;
         }
 
-/* Estilos específicos para checkbox */
+/* Estilos para checkbox */
 .form-group input[type="checkbox"] {
     margin-right: 0.5rem;
     width: auto;
@@ -1632,20 +1635,20 @@ footer {
         text-align: center;
         color: #3498db;
         font-size: 1.5rem;
-        margin-bottom: 1.5rem; /* Espaciado inferior */
-        border-bottom: 2px solid #3498db; /* Línea inferior para destacar */
-        padding-bottom: 0.5rem; /* Espaciado inferior de la línea */
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 0.5rem;
     }
 
 .form-row {
     display: flex;
-    gap: 2rem; /* Aumentamos el espacio entre los campos */
+    gap: 2rem;
     margin-bottom: 1.5rem;
 }
 
 .form-group {
     flex: 1;
-    min-width: 0; /* Esto evita que los inputs se desborden en pantallas pequeñas */
+    min-width: 0;
 }
 
     .form-group input,
@@ -1657,7 +1660,7 @@ footer {
         font-size: 1rem;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         background-color: #ffffff;
-        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        box-sizing: border-box;
     }
 
 @media (max-width: 768px) {
@@ -1875,7 +1878,7 @@ footer {
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
-        margin-top: 80px; /* Añade margen superior para separar del header */
+        margin-top: 80px;
     }
 
 .dashboard-section {
@@ -1884,10 +1887,9 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     margin-bottom: 2rem;
-    margin-top: 1rem; /* Añade un pequeño margen superior a cada sección */
+    margin-top: 1rem;
 }
 
-    /* Ajusta el primer dashboard-section para que no tenga margen superior */
     .dashboard-section:first-child {
         margin-top: 0;
     }
@@ -2035,7 +2037,7 @@ footer {
     }
 }
 
-/* Estilos para el nuevo grupo de información adicional */
+/* Estilos para información adicional */
 .form-section {
     background-color: #f8f9fa;
     border-radius: 15px;
@@ -2073,149 +2075,333 @@ footer {
 .historial-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Espacio entre los diagnósticos */
+    gap: 1.5rem;
 }
 
 .diagnostico-card {
-    background-color: #ffffff; /* Fondo blanco para los diagnósticos */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    padding: 2rem; /* Espaciado interno aumentado */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de hover */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .diagnostico-card:hover {
-        transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .diagnostico-card h3 {
         font-size: 1.5rem;
-        color: #3498db; /* Color del título */
-        margin-bottom: 0.5rem; /* Espacio inferior */
+        color: #3498db;
+        margin-bottom: 0.5rem;
     }
 
     .diagnostico-card p {
-        font-size: 1rem; /* Tamaño de fuente del texto */
-        color: #34495e; /* Color del texto */
-        margin: 0.5rem 0; /* Espacio superior e inferior */
+        font-size: 1rem;
+        color: #34495e;
+        margin: 0.5rem 0;
     }
 
 .btn-primary {
-    background-color: #3498db; /* Color del botón */
-    color: white; /* Color del texto del botón */
-    padding: 0.75rem 1.5rem; /* Espaciado interno del botón */
-    border: none; /* Sin borde */
-    border-radius: 6px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
-    margin-right: 1rem; /* Agregar margen derecho para separar los botones */
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 1rem;
 }
 
     .btn-primary:hover {
-        background-color: #2980b9; /* Color del botón al pasar el mouse */
-        transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+        background-color: #2980b9;
+        transform: translateY(-2px);
     }
 
 /* Estilos para el botón "Marcar como No Realizada" */
 .btn-secondary {
-    background-color: #e74c3c; /* Color rojo para indicar una acción negativa */
-    color: white; /* Color del texto */
-    padding: 0.75rem 1.5rem; /* Espaciado interno del botón */
-    border: none; /* Sin borde */
-    border-radius: 6px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
     .btn-secondary:hover {
-        background-color: #c0392b; /* Color más oscuro al pasar el mouse */
-        transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+        background-color: #c0392b;
+        transform: translateY(-2px);
     }
 
     .btn-secondary:active {
-        transform: translateY(0); /* Efecto de retorno al hacer clic */
+        transform: translateY(0);
     }
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
     header {
-        padding: 0.5rem 0; /* Reducir el padding en pantallas pequeñas */
+        padding: 0.5rem 0;
     }
 
     .header-content {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: flex-start; /* Alinear a la izquierda */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     h1 {
-        font-size: 1.5rem; /* Ajustar tamaño de fuente del encabezado */
-        margin: 0; /* Eliminar margen */
+        font-size: 1.5rem;
+        margin: 0;
     }
 
     nav ul {
-        flex-direction: column; /* Cambiar a columna en el menú de navegación */
-        margin-top: 0.5rem; /* Espacio entre el título y el menú */
+        flex-direction: column;
+        margin-top: 0.5rem;
     }
 
         nav ul li {
-            margin-left: 0; /* Eliminar margen izquierdo */
-            margin-bottom: 0.5rem; /* Espacio entre los elementos del menú */
+            margin-left: 0;
+            margin-bottom: 0.5rem;
         }
 }
 
 /* Ajustes para pantallas muy pequeñas */
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.2rem; /* Ajustar aún más el tamaño de fuente */
+        font-size: 1.2rem;
     }
 
     .header-content {
-        padding: 0 1rem; /* Reducir el padding lateral */
+        padding: 0 1rem;
     }
 }
 
 /* Estilos para el menú desplegable */
 .dropdown-content {
-    display: none; /* Ocultar por defecto */
-    position: absolute; /* Posicionar el menú desplegable */
-    background-color: white; /* Fondo blanco para el menú */
-    min-width: 160px; /* Ancho mínimo del menú */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para el menú */
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
-    border-radius: 6px; /* Bordes redondeados */
-    transition: opacity 0.3s ease; /* Transición suave */
-    opacity: 0; /* Inicialmente invisible */
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 6px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
 /* Mostrar el menú desplegable al hacer hover */
 .dropdown:hover .dropdown-content {
-    display: block; /* Mostrar el menú */
-    opacity: 1; /* Hacerlo visible */
+    display: block;
+    opacity: 1;
 }
 
 /* Estilos para los elementos del menú desplegable */
 .dropdown-content a {
-    color: #34495e; /* Color del texto */
-    padding: 0.8rem 1rem; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    display: block; /* Hacer que cada enlace ocupe toda la línea */
+    color: #34495e;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
 }
 
     /* Cambiar el color del texto al pasar el mouse */
     .dropdown-content a:hover {
-        background-color: #f0f4f8; /* Color de fondo al pasar el mouse */
+        background-color: #f0f4f8;
     }
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
     .dropdown-content {
-        position: absolute; /* Mantener la posición absoluta */
-        width: auto; /* Ajustar el ancho automáticamente */
-        left: 0; /* Alinear a la izquierda */
-        right: 0; /* Alinear a la derecha */
+        position: absolute;
+        width: auto;
+        left: 0;
+        right: 0;
     }
 }
+
+.diagnosticos-container {
+    max-width: 600px;
+    margin: 10rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .diagnosticos-container h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #3498db;
+    }
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #34495e;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 1rem;
+}
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+        transform: translateY(0);
+    }
+
+/* Estilos para los campos de texto */
+.form-group textarea {
+    width: 100%;
+    padding: 0rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: 120px;
+    margin-top: 0.5rem;
+}
+
+    .form-group textarea:focus {
+        border-color: #3498db;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+.admin-dashboard-page {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 5rem auto;
+}
+
+    .admin-dashboard-container h2 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+    }
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-primary {
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+        transform: translateY(0);
+    }
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.import-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .import-section h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+
+.import-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.import-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+.import-form input[type="file"],
+.import-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+    .import-form input[type="file"]:focus,
+    .import-form select:focus {
+        border-color: #3498db;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
 
 .access-denied-container {
     display: flex;
@@ -2281,4 +2467,10 @@ footer {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
 }

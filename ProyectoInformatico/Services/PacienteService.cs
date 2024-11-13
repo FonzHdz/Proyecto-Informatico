@@ -44,5 +44,14 @@ namespace ProyectoInformatico.Services
             var result = await _pacientes.DeleteOneAsync(p => p.Cedula == cedula);
             return result.DeletedCount > 0;
         }
+
+        public async Task<List<Paciente>> GetPacientesByEspecialistaId(int idEspecialista, CitaService citaService)
+        {
+            var citas = await citaService.GetCitasByEspecialistaId(idEspecialista);
+            var pacientesIds = citas.Select(c => c.IdPaciente).Distinct();
+            var pacientes = await _pacientes.Find(p => pacientesIds.Contains(p.Cedula)).ToListAsync();
+
+            return pacientes;
+        }
     }
 }

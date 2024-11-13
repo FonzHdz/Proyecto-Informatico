@@ -37,7 +37,12 @@
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("Error en el servidor.");
+            errorText.textContent = 'Ocurrió un error inesperado.';
+            errorMessage.classList.add('show');
+
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 3000);
         }
     });
 });

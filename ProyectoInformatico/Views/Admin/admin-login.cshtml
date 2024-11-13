@@ -1,0 +1,49 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administrador - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="admin-login-page">
+    <div class="admin-login-container">
+        <div class="admin-login-content">
+            <div class="admin-login-header">
+                <i class="fas fa-user-shield"></i>
+                <h1>Acceso Administrador</h1>
+            </div>
+            <p class="warning-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                Esta área está restringida solo a personal autorizado. Los accesos no autorizados serán registrados.
+            </p>
+            <form id="adminLoginForm" class="admin-login-form" method="post" action="@Url.Action("Login", "Admin")">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> Usuario</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+            </form>
+            <div class="admin-login-footer">
+                <a href="@Url.Content("~/")" class="btn-secondary">
+                    <i class="fas fa-home"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="@Url.Content("~/js/admin-script.js")"></script>
+</body>
+</html>

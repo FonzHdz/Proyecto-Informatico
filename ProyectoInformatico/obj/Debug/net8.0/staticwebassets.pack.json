@@ -13,12 +13,20 @@
       "PackagePath": "staticwebassets\\js\\contacto.js"
     },
     {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\diagnostico-guardar.js",
+      "PackagePath": "staticwebassets\\js\\diagnostico-guardar.js"
+    },
+    {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
       "PackagePath": "staticwebassets\\js\\doctor-acceso.js"
     },
     {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-registro.js",
       "PackagePath": "staticwebassets\\js\\doctor-registro.js"
+    },
+    {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",
+      "PackagePath": "staticwebassets\\js\\marcar-cita.js"
     },
     {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-acceso.js",

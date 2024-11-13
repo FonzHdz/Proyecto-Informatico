@@ -15,7 +15,8 @@ namespace ProyectoInformatico.Models
         public string Conclusion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaModificacion { get; set; }
-        public int IdEspecialista { get; set; } // Referencia al Id del especialista
-        public string IdPaciente { get; set; } // Referencia al Id del paciente
+        public int IdEspecialista { get; set; }
+        public string IdPaciente { get; set; }
+        public string IdCita { get; set; }
     }
 }

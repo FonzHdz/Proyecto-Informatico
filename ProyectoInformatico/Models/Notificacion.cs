@@ -13,6 +13,6 @@ namespace ProyectoInformatico.Models
         public string EmailDestinatario { get; set; }
         public string AsuntoCorreo { get; set; }
         public string MensajeCorreo { get; set; }
-        public string IdCita { get; set; } // Referencia al Id de la cita
+        public string IdCita { get; set; }
     }
 }

@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.23.0, )"
+            },
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
@@ -54,6 +58,10 @@
               "target": "Package",
               "version": "[4.8.0, )"
             },
+            "MediaInfo.DotNetWrapper": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
             "MimeKit": {
               "target": "Package",
               "version": "[4.8.0, )"
@@ -61,6 +69,18 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.9, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "fo-dicom": {
+              "target": "Package",
+              "version": "[5.1.4, )"
             },
             "iTextSharp.LGPLv2.Core": {
               "target": "Package",

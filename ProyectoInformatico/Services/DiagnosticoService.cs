@@ -29,19 +29,24 @@ namespace ProyectoInformatico.Services
         {
             return await _diagnosticos.Find(d => d.IdEspecialista == idEspecialista).ToListAsync();
         }
+
+        public async Task<Diagnostico> GetDiagnosticoByCitaId(string citaId)
+        {
+            return await _diagnosticos.Find(d => d.IdCita == citaId).FirstOrDefaultAsync();
+        }
         public async Task<Diagnostico> GetDiagnosticoById(string id)
         {
-            Console.WriteLine($"Buscando diagnóstico con Id: {id}"); // Log del ID recibido
+            Console.WriteLine($"Buscando diagnóstico con Id: {id}");
 
             var diagnostico = await _diagnosticos.Find(d => d.Id == id).FirstOrDefaultAsync();
 
             if (diagnostico == null)
             {
-                Console.WriteLine("Diagnóstico no encontrado."); // Log si no se encuentra el diagnóstico
+                Console.WriteLine("Diagnóstico no encontrado.");
             }
             else
             {
-                Console.WriteLine($"Diagnóstico encontrado: {diagnostico.Descripcion}"); // Log si se encuentra el diagnóstico
+                Console.WriteLine($"Diagnóstico encontrado: {diagnostico.Descripcion}");
             }
 
             return diagnostico;

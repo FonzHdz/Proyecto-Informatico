@@ -30,10 +30,12 @@
                 }, 4000);
 
                 setTimeout(() => {
-                    window.location.href = `/panel-doctor?id=${data.usuario}`;
+                    console.log(`Redirigiendo a /panel-doctor?id=${data.id}`);
+                    window.location.href = `/panel-doctor?id=${data.id}`;
                 }, 4100);
             } else {
-                errorText.textContent = 'Usuario o contraseña incorrectos.';
+                const data = await response.json();
+                errorText.textContent = data.mensaje || 'Usuario o contraseña incorrectos.';
                 errorMessage.classList.add('show');
 
                 setTimeout(() => {

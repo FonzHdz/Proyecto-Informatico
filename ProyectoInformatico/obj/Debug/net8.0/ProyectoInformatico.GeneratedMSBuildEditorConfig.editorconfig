@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alfon\Desktop\Proyecto-Informatico\ProyectoInformatico
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/admin-login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRtaW4tbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/acceso-doctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXGFjY2Vzby1kb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/diagnostico.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXGRpYWdub3N0aWNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/panel-doctor.cshtml]

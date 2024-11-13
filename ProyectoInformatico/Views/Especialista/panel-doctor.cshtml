@@ -1,4 +1,5 @@
 ﻿@page
+@using ProyectoInformatico.DTOs
 @{
     Layout = null;
 }
@@ -64,15 +65,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>María González</td>
-                        <td>15/05/2023</td>
-                        <td>28</td>
-                        <td>
-                            <button class="btn-action"><i class="fas fa-eye"></i> Ver</button>
-                            <button class="btn-action"><i class="fas fa-edit"></i> Editar</button>
-                        </td>
-                    </tr>
+                    @if (ViewBag.Pacientes != null)
+                    {
+                        foreach (var paciente in (List<Paciente>)ViewBag.Pacientes)
+                        {
+                            <tr>
+                                <td>@paciente.Nombre</td>
+                                <td>@paciente.FechaUltimaEcografia.ToString("dd/MM/yyyy")</td>
+                                <td>@paciente.SemanasEmbarazo</td>
+                                <td>
+                                    <button class="btn-action"><i class="fas fa-eye"></i> Ver</button>
+                                    <button class="btn-action"><i class="fas fa-edit"></i> Editar</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">No hay pacientes disponibles.</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </section>
@@ -83,16 +96,51 @@
                 <p>Componente de calendario para gestionar citas</p>
             </div>
             <div class="appointment-list">
-                <div class="appointment-card" id="cita-1">
-                    <h3>Paciente: María González</h3>
-                    <p>Fecha: 15 de Mayo, 2024</p>
-                    <p>Hora: 10:00 AM</p>
-                    <button class="btn-primary" onclick="accederCita(1)">Acceder a Cita</button>
-                    <button class="btn-secondary marcar-no-realizada" onclick="marcarNoRealizada(1)">Marcar como No Realizada</button>
-                </div>
+                @{
+                    var citas = ViewBag.Citas as List<ProyectoInformatico.DTOs.InformacionCita>;
+                }
+                @if (ViewBag.Citas != null && ((List<InformacionCita>)ViewBag.Citas).Any())
+                {
+                    foreach (var cita in (List<InformacionCita>)ViewBag.Citas)
+                    {
+                        <div class="appointment-card">
+                            <h3>Paciente: @cita.Paciente</h3>
+                            <p>Fecha: @cita.FechaCita.ToString("dd/MM/yyyy")</p>
+                            <p>Hora: @cita.FechaCita.ToString("hh:mm tt")</p>
+                            <p>Estado: @cita.Estado</p>
+                            <input type="hidden" id="citaId-@cita.Id" name="CitaId" value=@cita.Id />
+                            <button class="btn-primary" onclick="window.location.href='/diagnostico/@cita.Id'">Acceder a Cita</button>
+                            <button class="btn-secondary cancelarCitaBtn"
+                                data-cita-id="@cita.Id"
+                                @(cita.Estado.ToLower() == "cancelada" || cita.Estado.ToLower() == "realizada" ? "disabled" : "")>
+                                Marcar como No Realizada
+                            </button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No hay citas programadas.</p>
+                }
             </div>
         </section>
     </main>
+
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Acción exitosa!</h3>
+            <p id="successText">Se ha ejecutado la acción correctamente.</p>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error-message">
+        <div class="error-content">
+            <i class="fas fa-times-circle"></i>
+            <h3>¡Error!</h3>
+            <p id="errorText">Ocurrió un error inesperado.</p>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -100,6 +148,6 @@
         </div>
     </footer>
 
-    <script src="@Url.Content("~/js/panel-doctor.js")"></script>
+    <script src="@Url.Content("~/js/marcar-cita.js")"></script>
 </body>
 </html>
