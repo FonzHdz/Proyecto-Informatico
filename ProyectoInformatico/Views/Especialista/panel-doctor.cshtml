@@ -61,7 +61,6 @@
                         <th>Nombre</th>
                         <th>Fecha de Última Ecografía</th>
                         <th>Semanas de Gestación</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,10 +72,6 @@
                                 <td>@paciente.Nombre</td>
                                 <td>@paciente.FechaUltimaEcografia.ToString("dd/MM/yyyy")</td>
                                 <td>@paciente.SemanasEmbarazo</td>
-                                <td>
-                                    <button class="btn-action"><i class="fas fa-eye"></i> Ver</button>
-                                    <button class="btn-action"><i class="fas fa-edit"></i> Editar</button>
-                                </td>
                             </tr>
                         }
                     }

@@ -71,33 +71,6 @@ namespace ProyectoInformatico.Controllers
             }
         }
 
-        [HttpGet("registro-doctor")]
-        public IActionResult RegistroDoctor()
-        {
-            return View("registro-doctor");
-        }
-
-        [HttpPost("registro-doctor")]
-        public async Task<IActionResult> RegistrarEspecialista([FromForm] Especialista especialista)
-        {
-            try
-            {
-                var existente = await _especialistaService.GetEspecialistaByCedula(especialista.Cedula);
-                if (existente != null)
-                {
-                    return BadRequest(new { mensaje = "Esta persona ya está registrada." });
-                }
-
-                await _especialistaService.CreateEspecialista(especialista);
-                return Ok(new { mensaje = "Especialista registrado con éxito." });
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return StatusCode(500, new { mensaje = "Error en el servidor. Inténtelo nuevamente." });
-            }
-        }
-
         [Authorize(Roles = "Doctor")]
         [HttpGet("panel-doctor")]
         public async Task<IActionResult> PanelDoctor(string id)

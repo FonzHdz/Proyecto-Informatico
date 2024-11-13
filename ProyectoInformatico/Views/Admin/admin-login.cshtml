@@ -24,14 +24,14 @@
                 <i class="fas fa-exclamation-triangle"></i>
                 Esta área está restringida solo a personal autorizado. Los accesos no autorizados serán registrados.
             </p>
-            <form id="adminLoginForm" class="admin-login-form" method="post" action="@Url.Action("Login", "Admin")">
+            <form id="adminLoginForm" class="admin-login-form" method="post">
                 <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i> Usuario</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="usuario"><i class="fas fa-user"></i> Usuario</label>
+                    <input type="text" id="usuario" name="usuario" required>
                 </div>
                 <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="contraseña"><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
                 </div>
                 <button type="submit" class="btn-primary">
                     <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
@@ -44,6 +44,23 @@
             </div>
         </div>
     </div>
-    <script src="@Url.Content("~/js/admin-script.js")"></script>
+
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Inicio de sesión exitoso!</h3>
+            <p>Redirigiendo a su panel...</p>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error-message">
+        <div class="error-content">
+            <i class="fas fa-times-circle"></i>
+            <h3>¡Error!</h3>
+            <p id="errorText">No se ha podido iniciar sesión.</p>
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/js/admin-acceso.js")"></script>
 </body>
 </html>

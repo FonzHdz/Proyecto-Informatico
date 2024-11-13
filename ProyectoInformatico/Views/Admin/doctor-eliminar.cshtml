@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Doctor - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="admin-dashboard-page">
+    <div class="page-wrapper">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-user-times"></i> Eliminar Doctor</h1>
+                <nav>
+                    <ul>
+                        <li><a href="@Url.Content("~/logout")" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="admin-dashboard-container">
+                <h2>Eliminar Doctor</h2>
+                <form id="eliminarDoctorForm" method="post">
+                    <div class="form-group">
+                        <label for="doctorId">ID del Doctor:</label>
+                        <input type="text" id="doctorId" name="Identificacion" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Eliminar Doctor</button>
+                </form>
+            </div>
+        </main>
+
+        <div id="successMessage" class="success-message">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>¡Acción exitosa!</h3>
+                <p>Se ha eliminado al doctor correctamente.</p>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message">
+            <div class="error-content">
+                <i class="fas fa-times-circle"></i>
+                <h3>¡Error!</h3>
+                <p id="errorText">Ocurrió un error inesperado.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="@Url.Content("~/js/doctor-eliminar.js")"></script>
+</body>
+</html>

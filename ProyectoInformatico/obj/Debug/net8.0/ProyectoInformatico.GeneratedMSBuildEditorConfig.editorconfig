@@ -18,8 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alfon\Desktop\Proyecto-Informatico\ProyectoInformatico
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/admin-dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRtaW4tZGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/admin-login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRtaW4tbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/doctor-eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZG9jdG9yLWVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/editar-doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZWRpdGFyLWRvY3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/registro-doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5ccmVnaXN0cm8tZG9jdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/acceso-doctor.cshtml]
@@ -32,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/panel-doctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXHBhbmVsLWRvY3Rvci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/registro-doctor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXHJlZ2lzdHJvLWRvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/acceso-denegado.cshtml]

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\admin-acceso.js",
+      "PackagePath": "staticwebassets\\js\\admin-acceso.js"
+    },
+    {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\contacto.js",
       "PackagePath": "staticwebassets\\js\\contacto.js"
     },
@@ -19,6 +23,14 @@
     {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
       "PackagePath": "staticwebassets\\js\\doctor-acceso.js"
+    },
+    {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-editar.js",
+      "PackagePath": "staticwebassets\\js\\doctor-editar.js"
+    },
+    {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-eliminar.js",
+      "PackagePath": "staticwebassets\\js\\doctor-eliminar.js"
     },
     {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-registro.js",

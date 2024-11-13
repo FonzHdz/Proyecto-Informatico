@@ -1,0 +1,64 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="admin-dashboard-page">
+    <div class="page-wrapper">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-baby"></i> Ecografía 4D - Panel de Administración</h1>
+                <nav>
+                    <ul>
+                        <li><a href="@Url.Content("~/logout")" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="admin-dashboard-container">
+                <h2>Gestión de Doctores</h2>
+                <div class="button-group">
+                    <a href="@Url.Content("~/registro-doctor")" class="btn-primary"><i class="fas fa-user-plus"></i> Crear Doctor</a>
+                    <a href="@Url.Content("~/editar-doctor")" class="btn-primary"><i class="fas fa-user-edit"></i> Editar Doctor</a>
+                    <a href="@Url.Content("~/eliminar-doctor")" class="btn-primary"><i class="fas fa-user-times"></i> Eliminar Doctor</a>
+                </div>
+
+                <div class="import-section">
+                    <h2>Importar desde Excel</h2>
+                    <form id="importExcelForm" class="import-form" method="post" action="@Url.Action("ImportarExcel", "Admin")" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="excelFile"><i class="fas fa-file-excel"></i> Seleccionar archivo Excel</label>
+                            <input type="file" id="excelFile" name="excelFile" accept=".xls,.xlsx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="collectionSelect"><i class="fas fa-database"></i> Seleccionar colección</label>
+                            <select id="collectionSelect" name="collectionSelect" required>
+                                <option value="">Seleccione una colección</option>
+                                <option value="especialista">Doctores</option>
+                                <option value="pacientes">Pacientes</option>
+                                <option value="diagnosticos">Diagnósticos</option>
+                                <option value="citas">Citas</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-upload"></i> Importar Datos
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

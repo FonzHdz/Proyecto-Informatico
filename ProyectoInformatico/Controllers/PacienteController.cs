@@ -278,7 +278,7 @@ namespace ProyectoInformatico.Controllers
                     rutaTemporalMp4 = await ConvertVideoToMp4(rutaTemporalAvi, diagnostico.Id);
                 }
 
-                var imagenesRadiologicas = await _imagenRadiologicaService.ObtenerImagenesPorDiagnostico(diagnostico.Id);
+                var imagenesRadiologicas = await _imagenRadiologicaService.GeImagenesDiagnosticoId(diagnostico.Id);
                 List<string> imagenesPng = new List<string>();
 
                 foreach (var imagen in imagenesRadiologicas)

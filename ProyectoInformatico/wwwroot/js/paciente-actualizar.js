@@ -37,7 +37,7 @@
             }
         } catch (error) {
             console.error("Error:", error);
-            errorText.textContent = 'Ocurrió un error inesperado.';
+            errorText.textContent = error || 'Ocurrió un error inesperado.';
             errorMessage.classList.add('show');
 
             setTimeout(() => {

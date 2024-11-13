@@ -15,30 +15,30 @@ namespace ProyectoInformatico.Services
             _imagenesRadiologicas = database.GetCollection<ImagenRadiologica>("imagenes_radiologicas");
         }
 
-        public async Task GuardarImagenRadiologica(ImagenRadiologica imagen)
+        public async Task CreateImagenRadiologia(ImagenRadiologica imagen)
         {
             await _imagenesRadiologicas.InsertOneAsync(imagen);
         }
 
-        public async Task<List<ImagenRadiologica>> ObtenerImagenesPorDiagnostico(string diagnosticoId)
+        public async Task<List<ImagenRadiologica>> GeImagenesDiagnosticoId(string diagnosticoId)
         {
             return await _imagenesRadiologicas
                 .Find(imagen => imagen.IdDiagnostico == diagnosticoId)
                 .ToListAsync();
         }
-        public async Task<ImagenRadiologica> ObtenerImagenPorIdAsync(string imagenId)
+        public async Task<ImagenRadiologica> GeImagentById(string imagenId)
         {
             return await _imagenesRadiologicas
                 .Find(imagen => imagen.Id == imagenId)
                 .FirstOrDefaultAsync();
         }
 
-        public async Task EliminarImagenPorIdAsync(string imagenId)
+        public async Task DeleteImagenId(string imagenId)
         {
             await _imagenesRadiologicas.DeleteOneAsync(imagen => imagen.Id == imagenId);
         }
 
-        public async Task EliminarImagenesPorDiagnosticoAsync(string diagnosticoId)
+        public async Task DeleteImagenesDiagnosticoId(string diagnosticoId)
         {
             await _imagenesRadiologicas.DeleteManyAsync(imagen => imagen.IdDiagnostico == diagnosticoId);
         }

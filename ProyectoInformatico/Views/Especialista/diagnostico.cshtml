@@ -31,7 +31,9 @@
             <form id="diagnosticoForm" method="post" enctype="multipart/form-data">
                 
                 <input type="hidden" id="diagnosticoId" name="Id" value=@ViewBag.Diagnostico?.Id ?? @ViewBag.Id />
-                <input type="hidden" id="citaId" name="CitaId" value=@ViewBag.Diagnostico?.IdCita ?? @ViewBag.IdCita />
+                <input type="hidden" id="idPaciente" name="IdPaciente" value="@ViewBag.IdPaciente" />
+                <input type="hidden" id="idEspecialista" name="IdEspecialista" value=@ViewBag.IdEspecialista />
+                <input type="hidden" id="idCita" name="IdCita" value="@ViewBag.IdCita" />
                 
                 <div class="form-group">
                     <label for="pacienteNombre">Nombre del Paciente</label>
@@ -58,6 +60,7 @@
                     @if (ViewBag.VideoEcografia != null)
                     {
                         <p>El video de ecografía ya fue cargado.</p>
+                        <li><a href="@ViewBag.VideoEcografia" target="_blank">Ver Video</a></li>
                         <input type="file" id="videoEcografia" name="videoEcografia" accept="video/*" disabled>
                     }
                     else

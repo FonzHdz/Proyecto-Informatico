@@ -13,15 +13,17 @@ namespace ProyectoInformatico.Controllers
         private readonly DiagnosticoService _diagnosticoService;
         private readonly CitaService _citaService;
         private readonly PacienteService _pacienteService;
+        private readonly EspecialistaService _especialistaService;
         private readonly BlobStorageService _blobStorageService;
         private readonly VideoEcografiaService _videoEcografiaService;
         private readonly ImagenRadiologicaService _imagenRadiologicaService;
 
-        public DiagnosticoController(DiagnosticoService diagnosticoService, CitaService citaService, PacienteService pacienteService, BlobStorageService blobStorageService, VideoEcografiaService videoEcografiaService, ImagenRadiologicaService imagenRadiologicaService)
+        public DiagnosticoController(DiagnosticoService diagnosticoService, CitaService citaService, PacienteService pacienteService, EspecialistaService especialistaService, BlobStorageService blobStorageService, VideoEcografiaService videoEcografiaService, ImagenRadiologicaService imagenRadiologicaService)
         {
             _diagnosticoService = diagnosticoService;
             _citaService = citaService;
             _pacienteService = pacienteService;
+            _especialistaService = especialistaService;
             _blobStorageService = blobStorageService;
             _videoEcografiaService = videoEcografiaService;
             _imagenRadiologicaService = imagenRadiologicaService;
@@ -37,11 +39,16 @@ namespace ProyectoInformatico.Controllers
             var paciente = await _pacienteService.GetPacienteByCedula(cita.IdPaciente);
             if (paciente == null) return NotFound("Paciente no encontrado.");
 
+            var especialista = await _especialistaService.GetEspecialistaByIdentificacion(cita.IdEspecialista);
+            if (especialista == null) return NotFound("Especialista no encontrado.");
+
             var diagnosticoExistente = await _diagnosticoService.GetDiagnosticoByCitaId(citaId);
 
             if (diagnosticoExistente != null)
             {
                 var videoExistente = await _videoEcografiaService.GetByDiagnosticoId(diagnosticoExistente.Id);
+
+                var imagenesExistentes = await _imagenRadiologicaService.GeImagenesDiagnosticoId(diagnosticoExistente.Id);
 
                 ViewBag.Diagnostico = diagnosticoExistente;
                 ViewBag.PacienteNombre = paciente.Nombre;
@@ -52,26 +59,26 @@ namespace ProyectoInformatico.Controllers
 
                 if (videoExistente != null && !string.IsNullOrEmpty(videoExistente.UrlDescarga))
                 {
-                    var rutaTemporalDirectorio = Path.Combine(Directory.GetCurrentDirectory(), "ArchivosTemporales");
-                    Directory.CreateDirectory(rutaTemporalDirectorio);
+                    ViewBag.VideoEcografia = videoExistente.UrlDescarga;
+                }
 
-                    var rutaTemporal = Path.Combine(rutaTemporalDirectorio, $"Ecografia_{diagnosticoExistente.Id}.avi");
-
-                    Console.WriteLine($"Ruta de la carpeta temporal: {rutaTemporal}");
-
-                    using (var client = new HttpClient())
-                    {
-                        var response = await client.GetAsync(videoExistente.UrlDescarga);
-                        response.EnsureSuccessStatusCode();
-                        await using var fileStream = new FileStream(rutaTemporal, FileMode.Create, FileAccess.Write);
-                        await response.Content.CopyToAsync(fileStream);
-                    }
-
-                    ViewBag.VideoEcografia = $"/ArchivosTemporales/Ecografia_{diagnosticoExistente.Id}.avi";
+                Console.WriteLine($"ImagenesRadio {imagenesExistentes}");
+                if (imagenesExistentes.Count > 0)
+                {
+                    ViewBag.ImagenesRadiologicas = imagenesExistentes;
+                    Console.WriteLine($"ImagenesRadio {ViewBag.ImagenesRadiologicas}");
                 }
 
                 return View("~/Views/Especialista/diagnostico.cshtml");
             }
+
+            ViewBag.IdPaciente = paciente.Cedula;
+            ViewBag.IdEspecialista = especialista.Identificacion;
+            ViewBag.IdCita = citaId;
+
+            Console.WriteLine($"IdCita enviado: {ViewBag.IdCita}");
+            Console.WriteLine($"IdPaciente enviado: {ViewBag.IdPaciente}");
+            Console.WriteLine($"IdEspecialista enviado: {ViewBag.IdEspecialista}");
 
             ViewBag.PacienteNombre = paciente.Nombre;
             return View("~/Views/Especialista/diagnostico.cshtml");
@@ -81,9 +88,16 @@ namespace ProyectoInformatico.Controllers
         [HttpPost("diagnostico/guardar")]
         public async Task<IActionResult> GuardarDiagnostico([FromForm] Diagnostico diagnostico, [FromForm] IFormFile videoEcografia, [FromForm] List<IFormFile> imagenesRadiologicas)
         {
+            Console.WriteLine($"IdCita recibido: {diagnostico.IdCita}");
+            Console.WriteLine($"IdPaciente recibido: {diagnostico.IdPaciente}");
+            Console.WriteLine($"IdEspecialista recibido: {diagnostico.IdEspecialista}");
+
             try
             {
                 Console.WriteLine("Iniciando el proceso de guardar diagnóstico.");
+
+                var cita = await _citaService.GetCitaById(diagnostico.IdCita);
+                if (cita == null) return NotFound("Cita no encontrada.");
 
                 diagnostico.FechaModificacion = DateTime.Now;
 
@@ -116,8 +130,39 @@ namespace ProyectoInformatico.Controllers
                 {
                     Console.WriteLine("Creando un nuevo diagnóstico.");
                     diagnostico.FechaCreacion = DateTime.Now;
+                    if (string.IsNullOrEmpty(diagnostico.IdPaciente))
+                    {
+                        diagnostico.IdPaciente = cita.IdPaciente;
+                        diagnostico.IdEspecialista = cita.IdEspecialista;
+                        diagnostico.IdCita = cita.Id;
+                    }
                     await _diagnosticoService.CreateDiagnostico(diagnostico);
                     Console.WriteLine($"Diagnóstico creado con ID: {diagnostico.Id}");
+                    Console.WriteLine($"Diagnóstico creado con Especialista: {diagnostico.IdEspecialista}");
+                    Console.WriteLine($"Diagnóstico creado con Paciente: {diagnostico.IdPaciente}");
+
+                    var paciente = await _pacienteService.GetPacienteByCedula(diagnostico.IdPaciente);
+                    if (paciente != null)
+                    {
+                        paciente.FechaUltimaEcografia = diagnostico.FechaCreacion;
+                        var pacienteActualizado = await _pacienteService.UpdatePaciente(paciente.Cedula, paciente);
+                        if (!pacienteActualizado)
+                        {
+                            Console.WriteLine("Error al actualizar la fecha de última ecografía del paciente.");
+                            return StatusCode(500, new { mensaje = "Error al actualizar la información del paciente." });
+                        }
+                        Console.WriteLine("Fecha de última ecografía del paciente actualizada correctamente.");
+
+                        var estado = "realizada";
+                        cita.Estado = estado;
+                        var citaActualizada = await _citaService.UpdateCita(cita.Id, cita);
+                        if (!citaActualizada)
+                        {
+                            Console.WriteLine("Error al actualizar el estado de la cita.");
+                            return StatusCode(500, new { mensaje = "Error al actualizar la información de la cita." });
+                        }
+                        Console.WriteLine("Fecha de última ecografía del paciente actualizada correctamente.");
+                    }
                 }
 
                 if (videoEcografia != null && videoEcografia.Length > 0)
@@ -150,23 +195,27 @@ namespace ProyectoInformatico.Controllers
                     }
                 }
 
-                var totalImagenesExistentes = (await _imagenRadiologicaService.ObtenerImagenesPorDiagnostico(diagnostico.Id)).Count;
-                var imagenIndex = totalImagenesExistentes;
+                var totalImagenesExistentes = (await _imagenRadiologicaService.GeImagenesDiagnosticoId(diagnostico.Id)).Count;
+                Console.WriteLine($"Total imágenes : {totalImagenesExistentes}");
+                var imagenIndex = totalImagenesExistentes + 1;
+                Console.WriteLine($"Imagen index : {imagenIndex}");
 
-                foreach (var imagen in imagenesRadiologicas)
+                int cantidadImagenes = imagenesRadiologicas.Count;
+                int limite = cantidadImagenes / 2;
+
+                for (int i = 0; i < limite; i++)
                 {
+                    var imagen = imagenesRadiologicas[i];
+
                     if (imagen.Length > 0)
                     {
-                        var fileName = $"Radiologica_{diagnostico.Id}_{imagenIndex}.png";
-                        imagenIndex++;
-
                         var contentType = imagen.ContentType;
                         if (contentType == "application/octet-stream")
                         {
                             contentType = "application/png";
                         }
 
-                        var fileNameImg = $"Radiologica_{diagnostico.Id}_{imagenIndex}.png";
+                        var fileNameImg = $"Radiologica_{diagnostico.Id}_{i + 1}.png";
                         var containerName = "imagenes";
 
                         try
@@ -183,14 +232,13 @@ namespace ProyectoInformatico.Controllers
                                 IdDiagnostico = diagnostico.Id
                             };
 
-                            await _imagenRadiologicaService.GuardarImagenRadiologica(nuevaImagen);
+                            await _imagenRadiologicaService.CreateImagenRadiologia(nuevaImagen);
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine($"Error al subir la imagen o guardar en la base de datos: {ex.Message}");
                             return StatusCode(500, new { mensaje = "Error al subir una o más imágenes radiológicas." });
                         }
-
                     }
                 }
 

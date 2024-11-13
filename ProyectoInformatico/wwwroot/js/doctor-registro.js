@@ -48,7 +48,7 @@
                 }, 4000);
 
                 setTimeout(() => {
-                    window.location.href = '/acceso-doctor';
+                    window.location.href = document.referrer;
                 }, 4100);
             } else {
                 const data = await response.json();

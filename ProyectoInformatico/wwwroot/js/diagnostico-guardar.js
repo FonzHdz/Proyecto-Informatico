@@ -11,9 +11,11 @@
         return;
     }
 
+    guardarBtn.removeEventListener('click', guardarDiagnostico);
     guardarBtn.addEventListener('click', async function (event) {
         event.preventDefault();
         const formData = new FormData(form);
+        console.log([...formData.entries()])
 
         const videoEcografia = document.getElementById("videoEcografia").files[0];
         const imagenesRadiologicas = document.getElementById("imagenesRadiologicas").files;
