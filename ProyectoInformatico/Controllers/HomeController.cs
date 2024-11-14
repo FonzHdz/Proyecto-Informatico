@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoInformatico.Models;
+using ProyectoInformatico.Services;
+using ProyectoInformatico.DTOs;
 
 namespace ProyectoInformatico.Controllers
 {
@@ -20,6 +23,12 @@ namespace ProyectoInformatico.Controllers
         public IActionResult AccesoDenegado()
         {
             return View("acceso-denegado");
+        }
+
+        [HttpGet("restablecer-contraseña")]
+        public IActionResult RestablecerContraseña()
+        {
+            return View("restablecer-contraseña");
         }
 
         [HttpGet("logout")]

@@ -1,75 +1,83 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoInformatico.bundle.scp.css",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoInformatico.bundle.scp.css",
       "PackagePath": "staticwebassets\\ProyectoInformatico.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\css\\styles.css",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\admin-acceso.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\admin-acceso.js",
       "PackagePath": "staticwebassets\\js\\admin-acceso.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\contacto.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\contacto.js",
       "PackagePath": "staticwebassets\\js\\contacto.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\diagnostico-guardar.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\diagnostico-guardar.js",
       "PackagePath": "staticwebassets\\js\\diagnostico-guardar.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
       "PackagePath": "staticwebassets\\js\\doctor-acceso.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-editar.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-editar.js",
       "PackagePath": "staticwebassets\\js\\doctor-editar.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-eliminar.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-eliminar.js",
       "PackagePath": "staticwebassets\\js\\doctor-eliminar.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-registro.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-registro.js",
       "PackagePath": "staticwebassets\\js\\doctor-registro.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\importar.csv.js",
+      "PackagePath": "staticwebassets\\js\\importar.csv.js"
+    },
+    {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",
       "PackagePath": "staticwebassets\\js\\marcar-cita.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-acceso.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\paciente-acceso.js",
       "PackagePath": "staticwebassets\\js\\paciente-acceso.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-actualizar.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\paciente-actualizar.js",
       "PackagePath": "staticwebassets\\js\\paciente-actualizar.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-registro.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\paciente-registro.js",
       "PackagePath": "staticwebassets\\js\\paciente-registro.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\solicitar-diagnostico.js",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\restablecer-contraseña.js",
+      "PackagePath": "staticwebassets\\js\\restablecer-contraseña.js"
+    },
+    {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\solicitar-diagnostico.js",
       "PackagePath": "staticwebassets\\js\\solicitar-diagnostico.js"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\DiagnosticoPlantilla.pdf",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\DiagnosticoPlantilla.pdf",
       "PackagePath": "staticwebassets\\public\\DiagnosticoPlantilla.pdf"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\image.jpg",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\image.jpg",
       "PackagePath": "staticwebassets\\public\\image.jpg"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\image2.jpg",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\image2.jpg",
       "PackagePath": "staticwebassets\\public\\image2.jpg"
     },
     {
-      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\video-4D.mp4",
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\video-4D.mp4",
       "PackagePath": "staticwebassets\\public\\video-4D.mp4"
     },
     {

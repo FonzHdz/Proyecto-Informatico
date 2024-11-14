@@ -9,79 +9,91 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoInformatico
 build_property.RootNamespace = ProyectoInformatico
-build_property.ProjectDir = C:\Users\alfon\Desktop\Proyecto-Informatico\ProyectoInformatico\
+build_property.ProjectDir = C:\Users\alfon\Desktop\Proyecto-Informatico-Azure\ProyectoInformatico\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\alfon\Desktop\Proyecto-Informatico\ProyectoInformatico
+build_property.MSBuildProjectDirectory = C:\Users\alfon\Desktop\Proyecto-Informatico-Azure\ProyectoInformatico
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/admin-dashboard.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Admin/admin-dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRtaW4tZGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/admin-login.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Admin/admin-login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRtaW4tbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/doctor-eliminar.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Admin/doctor-eliminar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZG9jdG9yLWVsaW1pbmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/editar-doctor.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Admin/editar-doctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZWRpdGFyLWRvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Admin/registro-doctor.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Admin/registro-doctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5ccmVnaXN0cm8tZG9jdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/acceso-doctor.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Especialista/acceso-doctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXGFjY2Vzby1kb2N0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/diagnostico.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Especialista/diagnostico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXGRpYWdub3N0aWNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Especialista/panel-doctor.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Especialista/panel-doctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXHBhbmVsLWRvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/acceso-denegado.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Especialista/registro-doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpc3RhXHJlZ2lzdHJvLWRvY3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Home/acceso-denegado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhY2Nlc28tZGVuZWdhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/contacto.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Home/contacto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb250YWN0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Home/inicio.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Home/inicio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmljaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Paciente/acceso-paciente.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Home/restablecer-contraseña.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZXN0YWJsZWNlci1jb250cmFzZcOxYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Paciente/acceso-paciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcYWNjZXNvLXBhY2llbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Paciente/panel-paciente.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Paciente/panel-paciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVccGFuZWwtcGFjaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Paciente/registro-paciente.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Paciente/registro-paciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVccmVnaXN0cm8tcGFjaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/_ViewImports.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Paciente/solicitar-cita.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcc29saWNpdGFyLWNpdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/_ViewStart.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alfon/Desktop/Proyecto-Informatico/ProyectoInformatico/Views/Shared/_Layout.cshtml]
+[C:/Users/alfon/Desktop/Proyecto-Informatico-Azure/ProyectoInformatico/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dilxinetv9

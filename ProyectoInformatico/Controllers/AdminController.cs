@@ -13,11 +13,17 @@ namespace ProyectoInformatico.Controllers
     {
         private readonly AdminService _adminService;
         private readonly EspecialistaService _especialistaService;
+        private readonly PacienteService _pacienteService;
+        private readonly CitaService _citaService;
+        private readonly DiagnosticoService _diagnosticoService;
 
-        public AdminController(AdminService adminService, EspecialistaService especialistaService)
+        public AdminController(AdminService adminService, EspecialistaService especialistaService, PacienteService pacienteService, CitaService citaService, DiagnosticoService diagnosticoService)
         {
             _adminService = adminService;
             _especialistaService = especialistaService;
+            _pacienteService = pacienteService;
+            _citaService = citaService;
+            _diagnosticoService = diagnosticoService;
         }
 
         [HttpGet("admin-login")]
@@ -208,6 +214,128 @@ namespace ProyectoInformatico.Controllers
             {
                 Console.WriteLine($"Error: {ex.Message}");
                 return StatusCode(500, new { mensaje = "Error en el servidor al intentar eliminar el doctor." });
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("importar-csv")]
+        public async Task<IActionResult> ImportarCsv(IFormFile excelFile, [FromForm] string collectionSelect)
+        {
+            if (excelFile == null || excelFile.Length == 0)
+            {
+                return BadRequest(new { mensaje = "No se ha seleccionado ningún archivo para importar." });
+            }
+
+            if (string.IsNullOrWhiteSpace(collectionSelect))
+            {
+                return BadRequest(new { mensaje = "Debe seleccionar una colección para importar los datos." });
+            }
+
+            try
+            {
+                using var stream = new StreamReader(excelFile.OpenReadStream());
+                using var csvReader = new CsvHelper.CsvReader(stream, System.Globalization.CultureInfo.InvariantCulture);
+                var records = csvReader.GetRecords<dynamic>().ToList();
+
+                switch (collectionSelect.ToLower())
+                {
+                    case "especialista":
+                        var especialistas = records.Select(r => new Especialista
+                        {
+                            Identificacion = int.Parse(r.Identificacion),
+                            Cedula = r.Cedula,
+                            Nombre = r.Nombre,
+                            Especialidad = r.Especialidad,
+                            Telefono = r.Telefono,
+                            Direccion = r.Direccion,
+                            Departamento = r.Departamento,
+                            Ciudad = r.Ciudad,
+                            FechaNacimiento = DateTime.Parse(r.FechaNacimiento),
+                            Contraseña = BCrypt.Net.BCrypt.HashPassword(r.Contraseña),
+                            Genero = r.Genero
+                        }).ToList();
+
+                        foreach (var especialista in especialistas)
+                        {
+                            await _especialistaService.CreateEspecialista(especialista);
+                        }
+                        break;
+
+                    case "pacientes":
+                        var pacientes = records.Select(r => new Paciente
+                        {
+                            Cedula = r.Cedula,
+                            Nombre = r.Nombre,
+                            Nacionalidad = r.Nacionalidad,
+                            Correo = r.Correo,
+                            Telefono = r.Telefono,
+                            Direccion = r.Direccion,
+                            Departamento = r.Departamento,
+                            Ciudad = r.Ciudad,
+                            FechaNacimiento = DateTime.Parse(r.FechaNacimiento),
+                            TipoSangre = r.TipoSangre,
+                            SemanasEmbarazo = int.Parse(r.SemanasEmbarazo),
+                            FechaUltimaEcografia = DateTime.Parse(r.FechaUltimaEcografia),
+                            Contraseña = BCrypt.Net.BCrypt.HashPassword(r.Contraseña),
+                            Genero = r.Genero,
+                            EstadoCivil = r.EstadoCivil,
+                            Alergias = r.Alergias
+                        }).ToList();
+
+                        foreach (var paciente in pacientes)
+                        {
+                            await _pacienteService.CreatePaciente(paciente);
+                        }
+                        break;
+
+                    case "citas":
+                        var citas = records.Select(r => new Cita
+                        {
+                            Id = r.Id,
+                            FechaCreacion = DateTime.Parse(r.FechaCreacion),
+                            FechaCita = DateTime.Parse(r.FechaCita),
+                            Estado = r.Estado,
+                            IdPaciente = r.IdPaciente,
+                            IdEspecialista = int.Parse(r.IdEspecialista)
+                        }).ToList();
+
+                        foreach (var cita in citas)
+                        {
+                            await _citaService.CreateCita(cita);
+                        }
+                        break;
+
+                    case "diagnosticos":
+                        var diagnosticos = records.Select(r => new Diagnostico
+                        {
+                            Id = r.Id,
+                            Descripcion = r.Descripcion,
+                            Resultados = r.Resultados,
+                            Observaciones = r.Observaciones,
+                            Conclusion = r.Conclusion,
+                            FechaCreacion = DateTime.Parse(r.FechaCreacion),
+                            FechaModificacion = DateTime.Parse(r.FechaModificacion),
+                            IdPaciente = r.IdPaciente,
+                            IdEspecialista = int.Parse(r.IdEspecialista),
+                            IdCita = r.IdCita
+                        }).ToList();
+
+                        foreach (var diagnostico in diagnosticos)
+                        {
+                            await _diagnosticoService.CreateDiagnostico(diagnostico);
+                        }
+                        break;
+
+                    default:
+                        return BadRequest(new { mensaje = "La colección seleccionada no es válida." });
+                }
+
+                return Ok(new { mensaje = "Datos importados exitosamente." });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Error en el servidor al intentar importar los datos." });
             }
         }
     }

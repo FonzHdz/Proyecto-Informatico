@@ -109,6 +109,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "Contacto" });
 
 app.MapControllerRoute(
+    name: "restablecer-contraseña",
+    pattern: "restablecer-contraseña",
+    defaults: new { controller = "Home", action = "RestablecerContraseña" });
+
+app.MapControllerRoute(
     name: "acceso-doctor",
     pattern: "acceso-doctor",
     defaults: new { controller = "Especialista", action = "AccesoDoctor" });

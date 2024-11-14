@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj": {}
+    "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\ProyectoInformatico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj": {
+    "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\ProyectoInformatico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj",
+        "projectUniqueName": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\ProyectoInformatico.csproj",
         "projectName": "ProyectoInformatico",
-        "projectPath": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\ProyectoInformatico.csproj",
+        "projectPath": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\ProyectoInformatico.csproj",
         "packagesPath": "C:\\Users\\alfon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\",
+        "outputPath": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,6 +53,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.8.0, )"
@@ -69,6 +72,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "SkiaSharp": {
               "target": "Package",
@@ -106,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

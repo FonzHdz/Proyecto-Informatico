@@ -56,6 +56,13 @@ namespace ProyectoInformatico.Controllers
                 ViewBag.Resultados = diagnosticoExistente.Resultados;
                 ViewBag.Observaciones = diagnosticoExistente.Observaciones;
                 ViewBag.Conclusion = diagnosticoExistente.Conclusion;
+                ViewBag.IdPaciente = paciente.Cedula;
+                ViewBag.IdEspecialista = especialista.Identificacion;
+                ViewBag.IdCita = citaId;
+
+                Console.WriteLine($"IdCita enviado: {ViewBag.IdCita}");
+                Console.WriteLine($"IdPaciente enviado: {ViewBag.IdPaciente}");
+                Console.WriteLine($"IdEspecialista enviado: {ViewBag.IdEspecialista}");
 
                 if (videoExistente != null && !string.IsNullOrEmpty(videoExistente.UrlDescarga))
                 {

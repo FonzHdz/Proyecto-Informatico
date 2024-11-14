@@ -37,14 +37,14 @@
 
                 <div class="import-section">
                     <h2>Importar desde Excel</h2>
-                    <form id="importExcelForm" class="import-form" method="post" action="@Url.Action("ImportarExcel", "Admin")" enctype="multipart/form-data">
+                    <form id="importExcelForm" class="import-form" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="excelFile"><i class="fas fa-file-excel"></i> Seleccionar archivo Excel</label>
-                            <input type="file" id="excelFile" name="excelFile" accept=".xls,.xlsx" required>
+                            <label for="excelFile"><i class="fas fa-file-excel"></i> Seleccionar archivo Excel/CSV</label>
+                            <input type="file" id="excelFile" name="excelFile" accept=".csv,.xlsx">
                         </div>
                         <div class="form-group">
                             <label for="collectionSelect"><i class="fas fa-database"></i> Seleccionar colección</label>
-                            <select id="collectionSelect" name="collectionSelect" required>
+                            <select id="collectionSelect" name="collectionSelect">
                                 <option value="">Seleccione una colección</option>
                                 <option value="especialista">Doctores</option>
                                 <option value="pacientes">Pacientes</option>
@@ -60,5 +60,7 @@
             </div>
         </main>
     </div>
+
+    <script src="@Url.Content("~/js/importar-csv.js")"></script>
 </body>
 </html>

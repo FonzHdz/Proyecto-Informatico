@@ -1,0 +1,62 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Nueva Cita - Ecografía 4D</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/styles.css")">
+</head>
+<body class="patient-panel-page">
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-baby"></i> Ecografía 4D - Panel de Administración</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Content("~/logout")" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="diagnosticos-container">
+            <h1>Solicitar Nueva Cita</h1>
+            <form id="citaForm" class="cita-form" method="post" action="@Url.Action("SolicitarCita", "Citas")">
+                <div class="form-group">
+                    <label for="fecha">Fecha de la Cita</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora de la Cita</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+                <div class="form-group">
+                    <label for="especialista">Seleccionar Especialista</label>
+                    <select id="especialista" name="especialista" required>
+                        <option value="">Seleccione un especialista</option>
+                        <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
+                        <option value="Dra. Ana Gómez">Dra. Ana Gómez</option>
+                        <option value="Dr. Luis Martínez">Dr. Luis Martínez</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Solicitar Cita</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sistema de Gestión de Información Médica para Ecografía 4D. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="@Url.Content("~/js/solicitar-cita.js")"></script>
+</body>
+</html>

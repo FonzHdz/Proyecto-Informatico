@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0eAaMBM6Hu7hx1M2Ix23Ed1kLZ2OI/AnYzJq1OFVDNM=",
+  "Hash": "HCd7DcS3+sjQ+LLMfga8f//a9TRVe2BLw3weXJatymk=",
   "Source": "ProyectoInformatico",
   "BasePath": "_content/ProyectoInformatico",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ProyectoInformatico\\wwwroot",
       "Source": "ProyectoInformatico",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoInformatico.styles.css",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoInformatico.styles.css",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "ProyectoInformatico.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoInformatico.styles.css"
+      "OriginalItemSpec": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoInformatico.styles.css"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoInformatico.bundle.scp.css",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoInformatico.bundle.scp.css",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "ProyectoInformatico.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoInformatico.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoInformatico.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\css\\styles.css",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\css\\styles.css",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "css/styles.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\admin-acceso.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\admin-acceso.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/admin-acceso.js",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\js\\admin-acceso.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\contacto.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\contacto.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/contacto.js",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\js\\contacto.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\diagnostico-guardar.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\diagnostico-guardar.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/diagnostico-guardar.js",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\js\\diagnostico-guardar.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-acceso.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/doctor-acceso.js",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\js\\doctor-acceso.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-editar.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-editar.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/doctor-editar.js",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\js\\doctor-editar.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-eliminar.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-eliminar.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/doctor-eliminar.js",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\js\\doctor-eliminar.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\doctor-registro.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\doctor-registro.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/doctor-registro.js",
       "AssetKind": "All",
@@ -207,10 +207,29 @@
       "OriginalItemSpec": "wwwroot\\js\\doctor-registro.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\importar.csv.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
+      "BasePath": "_content/ProyectoInformatico",
+      "RelativePath": "js/importar.csv.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\importar.csv.js"
+    },
+    {
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",
+      "SourceId": "ProyectoInformatico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/marcar-cita.js",
       "AssetKind": "All",
@@ -226,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\js\\marcar-cita.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-acceso.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\paciente-acceso.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/paciente-acceso.js",
       "AssetKind": "All",
@@ -245,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\js\\paciente-acceso.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-actualizar.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\paciente-actualizar.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/paciente-actualizar.js",
       "AssetKind": "All",
@@ -264,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\js\\paciente-actualizar.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\paciente-registro.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\paciente-registro.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/paciente-registro.js",
       "AssetKind": "All",
@@ -283,10 +302,29 @@
       "OriginalItemSpec": "wwwroot\\js\\paciente-registro.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\js\\solicitar-diagnostico.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\restablecer-contraseña.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
+      "BasePath": "_content/ProyectoInformatico",
+      "RelativePath": "js/restablecer-contraseña.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\restablecer-contraseña.js"
+    },
+    {
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\solicitar-diagnostico.js",
+      "SourceId": "ProyectoInformatico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "js/solicitar-diagnostico.js",
       "AssetKind": "All",
@@ -302,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\js\\solicitar-diagnostico.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\DiagnosticoPlantilla.pdf",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\DiagnosticoPlantilla.pdf",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "public/DiagnosticoPlantilla.pdf",
       "AssetKind": "All",
@@ -321,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\public\\DiagnosticoPlantilla.pdf"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\image.jpg",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\image.jpg",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "public/image.jpg",
       "AssetKind": "All",
@@ -340,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\public\\image.jpg"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\image2.jpg",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\image2.jpg",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "public/image2.jpg",
       "AssetKind": "All",
@@ -359,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\public\\image2.jpg"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\public\\video-4D.mp4",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\public\\video-4D.mp4",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico\\ProyectoInformatico\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
       "RelativePath": "public/video-4D.mp4",
       "AssetKind": "All",

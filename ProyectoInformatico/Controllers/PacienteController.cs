@@ -398,5 +398,11 @@ namespace ProyectoInformatico.Controllers
                 await Task.Delay(5000);
             }
         }
+
+        [HttpGet("solicitar-cita")]
+        public IActionResult SolicitarCita()
+        {
+            return View("solicitar-cita");
+        }
     }
 }
