@@ -251,7 +251,7 @@ namespace ProyectoInformatico.Controllers
                             Departamento = r.Departamento,
                             Ciudad = r.Ciudad,
                             FechaNacimiento = DateTime.Parse(r.FechaNacimiento),
-                            Contraseña = BCrypt.Net.BCrypt.HashPassword(r.Password),
+                            Contraseña = r.Contraseña,
                             Genero = r.Genero
                         }).ToList();
 
@@ -276,7 +276,7 @@ namespace ProyectoInformatico.Controllers
                             TipoSangre = r.TipoSangre,
                             SemanasEmbarazo = int.Parse(r.SemanasEmbarazo),
                             FechaUltimaEcografia = DateTime.Parse(r.FechaUltimaEcografia),
-                            Contraseña = BCrypt.Net.BCrypt.HashPassword(r.Contraseña),
+                            Contraseña = r.Contraseña,
                             Genero = r.Genero,
                             EstadoCivil = r.EstadoCivil,
                             Alergias = r.Alergias

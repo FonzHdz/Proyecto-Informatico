@@ -12,7 +12,7 @@
 
     setTimeout(() => {
         successMessage.classList.remove('show');
-    }, 5000);
+    }, 8000);
 
     try {
         const response = await fetch(`/paciente/enviar-diagnostico`, {

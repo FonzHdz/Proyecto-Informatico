@@ -40,7 +40,7 @@
         formData.append('nombre', document.getElementById('nombre').value.trim());
         formData.append('fechaNacimiento', document.getElementById('fechaNacimiento').value.trim());
         formData.append('genero', document.getElementById('genero').value.trim());
-        formData.append('correo', document.getElementById('email').value.trim());
+        formData.append('correo', document.getElementById('correo').value.trim());
         formData.append('telefono', document.getElementById('telefono').value.trim());
         formData.append('direccion', document.getElementById('direccion').value.trim());
         formData.append('ciudad', document.getElementById('ciudad').value.trim());
