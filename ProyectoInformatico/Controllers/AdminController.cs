@@ -251,7 +251,7 @@ namespace ProyectoInformatico.Controllers
                             Departamento = r.Departamento,
                             Ciudad = r.Ciudad,
                             FechaNacimiento = DateTime.Parse(r.FechaNacimiento),
-                            Contraseña = BCrypt.Net.BCrypt.HashPassword(r.Contraseña),
+                            Contraseña = BCrypt.Net.BCrypt.HashPassword(r.Password),
                             Genero = r.Genero
                         }).ToList();
 

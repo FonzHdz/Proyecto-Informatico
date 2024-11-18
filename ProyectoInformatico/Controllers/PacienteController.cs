@@ -19,6 +19,7 @@ using System.IO;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Drawing;
+using FellowOakDicom;
 
 namespace ProyectoInformatico.Controllers
 {
@@ -253,9 +254,15 @@ namespace ProyectoInformatico.Controllers
                     formFields.SetField("var-edad_paciente", ((DateTime.Now - paciente.FechaNacimiento).TotalDays / 365).ToString("0") + " años");
                     formFields.SetField("var-tel_paciente", $"+57 {paciente.Telefono}");
                     formFields.SetField("var-date_cita", diagnostico.FechaCreacion.ToString("dd - MM - yyyy"));
+                    formFields.SetField("var-hora_cita", diagnostico.FechaCreacion.ToString("hh:mm tt"));
+                    formFields.SetField("var-servicio", "Evaluación morfológica fetal");
+                    formFields.SetField("var-meses_embarazo", paciente.SemanasEmbarazo.ToString() + " semanas");
                     formFields.SetField("var-descripcion", diagnostico.Descripcion ?? "N/A");
+                    formFields.SetField("var-resultados", diagnostico.Resultados ?? "N/A");
+                    formFields.SetField("var-observaciones", diagnostico.Observaciones ?? "N/A");
                     formFields.SetField("var-conclusiones", diagnostico.Conclusion ?? "N/A");
                     formFields.SetField("var-nombre_especialista", "Dr. " + especialista.Nombre);
+                    formFields.SetField("var-especialidad", "Especialista en " + especialista.Especialidad);
                     stamper.FormFlattening = true;
                 }
 

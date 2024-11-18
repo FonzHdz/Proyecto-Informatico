@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HCd7DcS3+sjQ+LLMfga8f//a9TRVe2BLw3weXJatymk=",
+  "Hash": "F6/nMzzmYlWcCkHGF2ZRUl/ZhVi8xWWVaAYXLch6KM4=",
   "Source": "ProyectoInformatico",
   "BasePath": "_content/ProyectoInformatico",
   "Mode": "Default",
@@ -207,12 +207,12 @@
       "OriginalItemSpec": "wwwroot\\js\\doctor-registro.js"
     },
     {
-      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\importar.csv.js",
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\importar-csv.js",
       "SourceId": "ProyectoInformatico",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
       "BasePath": "_content/ProyectoInformatico",
-      "RelativePath": "js/importar.csv.js",
+      "RelativePath": "js/importar-csv.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,7 +223,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\importar.csv.js"
+      "OriginalItemSpec": "wwwroot\\js\\importar-csv.js"
     },
     {
       "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\marcar-cita.js",

@@ -55,6 +55,19 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 builder.Services.AddScoped<EspecialistaService>();
 builder.Services.AddScoped<PacienteService>();
 builder.Services.AddScoped<CitaService>();
@@ -62,6 +75,7 @@ builder.Services.AddScoped<DiagnosticoService>();
 builder.Services.AddScoped<VideoEcografiaService>();
 builder.Services.AddSingleton<ImagenRadiologicaService>();
 builder.Services.AddScoped<AdminService>();
+builder.Services.AddScoped<CsvProcessingService>();
 
 var app = builder.Build();
 
@@ -77,6 +91,7 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCors("AllowAll");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
