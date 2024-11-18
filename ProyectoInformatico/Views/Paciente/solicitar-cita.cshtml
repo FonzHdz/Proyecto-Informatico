@@ -41,15 +41,37 @@
                     <label for="especialista">Seleccionar Especialista</label>
                     <select id="especialista" name="especialista" required>
                         <option value="">Seleccione un especialista</option>
-                        <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
-                        <option value="Dra. Ana Gómez">Dra. Ana Gómez</option>
-                        <option value="Dr. Luis Martínez">Dr. Luis Martínez</option>
+                        @if (ViewBag.Especialistas != null)
+                        {
+                            foreach (var especialista in (List<ProyectoInformatico.Models.Especialista>)ViewBag.Especialistas)
+                            {
+                                <option value="@especialista.Identificacion">
+                                    @especialista.Nombre - (@especialista.Identificacion)
+                                </option>
+                            }
+                        }
                     </select>
                 </div>
                 <button type="submit" class="btn-primary">Solicitar Cita</button>
             </form>
         </div>
     </main>
+
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Cita Creada!</h3>
+            <p id="successText">La cita se ha solicitado exitosamente.</p>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="error-message">
+        <div class="error-content">
+            <i class="fas fa-times-circle"></i>
+            <h3>¡Error!</h3>
+            <p id="errorText">Ocurrió un error al crear la cita.</p>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F6/nMzzmYlWcCkHGF2ZRUl/ZhVi8xWWVaAYXLch6KM4=",
+  "Hash": "V5PKNFsNVV3pzwA/ihF/eaMEES8U73hKnxJuChcD+Vk=",
   "Source": "ProyectoInformatico",
   "BasePath": "_content/ProyectoInformatico",
   "Mode": "Default",
@@ -319,6 +319,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\restablecer-contraseña.js"
+    },
+    {
+      "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\solicitar-cita.js",
+      "SourceId": "ProyectoInformatico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\",
+      "BasePath": "_content/ProyectoInformatico",
+      "RelativePath": "js/solicitar-cita.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\solicitar-cita.js"
     },
     {
       "Identity": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\solicitar-diagnostico.js",

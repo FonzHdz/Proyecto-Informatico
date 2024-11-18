@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\js\\restablecer-contraseña.js"
     },
     {
+      "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\solicitar-cita.js",
+      "PackagePath": "staticwebassets\\js\\solicitar-cita.js"
+    },
+    {
       "Id": "C:\\Users\\alfon\\Desktop\\Proyecto-Informatico-Azure\\ProyectoInformatico\\wwwroot\\js\\solicitar-diagnostico.js",
       "PackagePath": "staticwebassets\\js\\solicitar-diagnostico.js"
     },

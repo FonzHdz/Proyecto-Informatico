@@ -406,10 +406,66 @@ namespace ProyectoInformatico.Controllers
             }
         }
 
+        [Authorize(Roles = "Paciente")]
         [HttpGet("solicitar-cita")]
-        public IActionResult SolicitarCita()
+        public async Task<IActionResult> SolicitarCita()
         {
-            return View("solicitar-cita");
+            try
+            {
+                var especialistas = await _especialistaService.GetAllEspecialistas();
+                ViewBag.Especialistas = especialistas;
+                return View("solicitar-cita");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener especialistas: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Error al cargar los especialistas. Intente nuevamente." });
+            }
+        }
+
+        [Authorize(Roles = "Paciente")]
+        [HttpPost("citas/crear-cita")]
+        public async Task<IActionResult> CrearCita([FromBody] CitaRequest request)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(request.FechaCita) || string.IsNullOrWhiteSpace(request.Especialista.ToString()))
+                {
+                    return BadRequest(new { mensaje = "Todos los campos son obligatorios." });
+                }
+
+                var pacienteCedula = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                if (string.IsNullOrWhiteSpace(pacienteCedula))
+                {
+                    return Unauthorized(new { mensaje = "No se pudo identificar al paciente." });
+                }
+
+                var especialista = await _especialistaService.GetEspecialistaByIdentificacion(request.Especialista);
+
+                if (especialista == null)
+                {
+                    return BadRequest(new { mensaje = "El especialista seleccionado no existe." });
+                }
+
+                var nuevaCita = new Cita
+                {
+                    FechaCreacion = DateTime.UtcNow,
+                    FechaCita = DateTime.Parse(request.FechaCita),
+                    Estado = "pendiente",
+                    IdPaciente = pacienteCedula,
+                    IdEspecialista = especialista.Identificacion,
+                };
+
+                await _citaService.CreateCita(nuevaCita);
+
+                return Ok(new { mensaje = "Cita creada exitosamente." });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear la cita: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Error en el servidor. Por favor, intente nuevamente." });
+            }
         }
     }
 }
