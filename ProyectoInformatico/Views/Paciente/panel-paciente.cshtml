@@ -63,6 +63,12 @@
                             <p><strong>Hora:</strong> @cita.FechaCita.ToString("hh:mm tt")</p>
                             <p><strong>Especialista:</strong> @cita.Especialista</p>
                             <p><strong>Estado:</strong> @cita.Estado</p>
+                            <input type="hidden" id="citaId-@cita.Id" name="CitaId" value=@cita.Id />
+                            <button class="btn-secondary cancelarCitaBtn"
+                                data-cita-id="@cita.Id"
+                                @(cita.Estado.ToLower() == "cancelada" || cita.Estado.ToLower() == "realizada" ? "disabled" : "")>
+                                Cancelar Cita
+                            </button>
                         </div>
                     }
                 }
@@ -151,5 +157,6 @@
 
     <script src="@Url.Content("~/js/paciente-actualizar.js")"></script>
     <script src="@Url.Content("~/js/solicitar-diagnostico.js")"></script>
+    <script src="@Url.Content("~/js/marcar-cita.js")"></script>
 </body>
 </html>

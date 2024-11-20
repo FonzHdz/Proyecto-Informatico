@@ -145,6 +145,7 @@ namespace ProyectoInformatico.Controllers
 
                     informacionCitas.Add(new InformacionCita
                     {
+                        Id = cita.Id,
                         FechaCita = cita.FechaCita,
                         Estado = char.ToUpper(cita.Estado[0]) + cita.Estado.Substring(1).ToLower(),
                         Especialista = especialista?.Nombre ?? "No asignado"
@@ -159,8 +160,14 @@ namespace ProyectoInformatico.Controllers
                 ViewBag.Cedula = paciente.Cedula;
                 ViewBag.FechaNacimiento = paciente.FechaNacimiento.ToString("yyyy-MM-dd");
                 ViewBag.Telefono = paciente.Telefono;
-                ViewBag.ProximaCita = citas.OrderBy(c => c.FechaCita).FirstOrDefault()?.FechaCita.ToString("dd/MM/yyyy hh:mm tt") ?? "Sin citas programadas";
-                ViewBag.UltimaEcografia = paciente.FechaUltimaEcografia.Year == 1 ? "Sin ecografías" : paciente.FechaUltimaEcografia.ToString("dd/MM/yyyy");
+                ViewBag.ProximaCita = citas
+                    .Where(c => c.FechaCita > DateTime.Now && c.Estado.ToLower() == "pendiente")
+                    .OrderBy(c => c.FechaCita)
+                    .FirstOrDefault()?.FechaCita.ToString("dd/MM/yyyy hh:mm tt") ?? "Sin citas programadas";
+                ViewBag.UltimaEcografia = citas
+                    .Where(c => c.Estado.ToLower() == "realizada")
+                    .OrderByDescending(c => c.FechaCita)
+                    .FirstOrDefault()?.FechaCita.ToString("dd/MM/yyyy") ?? "Sin ecografías";
                 ViewBag.SemanasEmbarazo = paciente.SemanasEmbarazo;
                 ViewBag.HistorialMedico = diagnosticos;
 
@@ -203,6 +210,27 @@ namespace ProyectoInformatico.Controllers
                 Console.WriteLine($"Error: {ex.Message}");
                 return StatusCode(500, new { mensaje = "Error en el servidor." });
             }
+        }
+
+        [Authorize(Roles = "Paciente")]
+        [HttpPost("citas/{id}/cancelar")]
+        public async Task<IActionResult> CancelarCita(string id)
+        {
+            var cita = await _citaService.GetCitaById(id);
+            if (cita == null)
+            {
+                return NotFound(new { mensaje = "Cita no encontrada." });
+            }
+
+            cita.Estado = "cancelada";
+            var actualizado = await _citaService.UpdateCita(id, cita);
+
+            if (!actualizado)
+            {
+                return StatusCode(500, new { mensaje = "No se pudo cancelar la cita." });
+            }
+
+            return Ok(new { mensaje = "Cita cancelada exitosamente." });
         }
 
         [Authorize(Roles = "Paciente")]

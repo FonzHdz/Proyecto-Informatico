@@ -70,7 +70,7 @@
                         {
                             <tr>
                                 <td>@paciente.Nombre</td>
-                                <td>@paciente.FechaUltimaEcografia.ToString("dd/MM/yyyy")</td>
+                                <td>@ViewBag.UltimaEcografia</td>
                                 <td>@paciente.SemanasEmbarazo</td>
                             </tr>
                         }
@@ -104,11 +104,10 @@
                             <p>Hora: @cita.FechaCita.ToString("hh:mm tt")</p>
                             <p>Estado: @cita.Estado</p>
                             <input type="hidden" id="citaId-@cita.Id" name="CitaId" value=@cita.Id />
-                            <button class="btn-primary" onclick="window.location.href='/diagnostico/@cita.Id'">Acceder a Cita</button>
-                            <button class="btn-secondary cancelarCitaBtn"
-                                data-cita-id="@cita.Id"
-                                @(cita.Estado.ToLower() == "cancelada" || cita.Estado.ToLower() == "realizada" ? "disabled" : "")>
-                                Marcar como No Realizada
+                            <button class="btn-primary" 
+                                onclick="window.location.href='/diagnostico/@cita.Id'"
+                                @(cita.Estado.ToLower() == "cancelada" ? "disabled" : "")>
+                                Acceder a Cita
                             </button>
                         </div>
                     }

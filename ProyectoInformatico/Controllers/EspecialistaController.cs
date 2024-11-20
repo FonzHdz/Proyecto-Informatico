@@ -107,6 +107,10 @@ namespace ProyectoInformatico.Controllers
                 ViewBag.EcografiasRealizadas = citas.Count(c => c.Estado == "realizada");
                 ViewBag.Pacientes = pacientes;
                 ViewBag.Citas = informacionCitas;
+                ViewBag.UltimaEcografia = citas
+                    .Where(c => c.Estado.ToLower() == "realizada")
+                    .OrderByDescending(c => c.FechaCita)
+                    .FirstOrDefault()?.FechaCita.ToString("dd/MM/yyyy") ?? "Sin ecografías";
 
                 return View("panel-doctor");
             }
@@ -115,27 +119,6 @@ namespace ProyectoInformatico.Controllers
                 Console.WriteLine($"Error: {ex.Message}");
                 return StatusCode(500, "Error al cargar el panel del doctor.");
             }
-        }
-
-        [Authorize(Roles = "Doctor")]
-        [HttpPost("citas/{id}/cancelar")]
-        public async Task<IActionResult> CancelarCita(string id)
-        {
-            var cita = await _citaService.GetCitaById(id);
-            if (cita == null)
-            {
-                return NotFound(new { mensaje = "Cita no encontrada." });
-            }
-
-            cita.Estado = "cancelada";
-            var actualizado = await _citaService.UpdateCita(id, cita);
-
-            if (!actualizado)
-            {
-                return StatusCode(500, new { mensaje = "No se pudo cancelar la cita." });
-            }
-
-            return Ok(new { mensaje = "Cita cancelada exitosamente." });
         }
     }
 }

@@ -17,6 +17,7 @@
                 });
 
                 if (response.ok) {
+                    console.log("Cita ID:", citaId);
                     successText.textContent = 'Cita marcada como cancelada.';
                     successMessage.classList.add('show');
 
@@ -26,7 +27,7 @@
                     }, 3000);
                 } else {
                     const errorData = await response.json();
-                    errorText.textContent = errorData.mensaje || 'No se pudoo cancelar la cita.';
+                    errorText.textContent = errorData.mensaje || 'No se pudo cancelar la cita.';
                     errorMessage.classList.add('show');
 
                     setTimeout(() => {
