@@ -476,10 +476,13 @@ namespace ProyectoInformatico.Controllers
                     return BadRequest(new { mensaje = "El especialista seleccionado no existe." });
                 }
 
+                var fechaCitaUtc = DateTime.Parse(request.FechaCita).ToUniversalTime();
+                var fechaCitaLocal = fechaCitaUtc.AddHours(-5); // Colombia está en UTC-5
+
                 var nuevaCita = new Cita
                 {
                     FechaCreacion = DateTime.UtcNow,
-                    FechaCita = DateTime.Parse(request.FechaCita),
+                    FechaCita = fechaCitaLocal,
                     Estado = "pendiente",
                     IdPaciente = pacienteCedula,
                     IdEspecialista = especialista.Identificacion,

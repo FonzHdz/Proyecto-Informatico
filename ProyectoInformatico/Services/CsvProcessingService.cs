@@ -11,14 +11,12 @@ public class CsvProcessingService
     {
         try
         {
-            // Configuración de codificación
             using var reader = new StreamReader(csvStream, System.Text.Encoding.GetEncoding(encoding));
 
-            // Configuración del CsvHelper
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
-                MissingFieldFound = null, // Ignorar campos faltantes
-                HeaderValidated = null,  // Ignorar validaciones del encabezado
+                MissingFieldFound = null,
+                HeaderValidated = null,
                 BadDataFound = context =>
                 {
                     Console.WriteLine($"Dato inválido detectado: {context.RawRecord}");
@@ -27,7 +25,6 @@ public class CsvProcessingService
 
             using var csv = new CsvReader(reader, config);
 
-            // Normalización de caracteres especiales
             var records = csv.GetRecords<T>()
                 .Select(record =>
                 {
