@@ -477,7 +477,7 @@ namespace ProyectoInformatico.Controllers
                 }
 
                 var fechaCitaUtc = DateTime.Parse(request.FechaCita).ToUniversalTime();
-                var fechaCitaLocal = fechaCitaUtc.AddHours(-5); // Colombia está en UTC-5
+                var fechaCitaLocal = fechaCitaUtc.AddHours(-5);
 
                 var nuevaCita = new Cita
                 {
